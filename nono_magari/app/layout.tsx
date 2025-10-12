@@ -16,9 +16,9 @@ export const metadata: Metadata = {
   title: "野々",
   description: "一日のはじまりに、余白とやすらぎを。旬の食材、心地よい空間、素材の味を大切に。東京の真ん中で、やさしい朝ごはんをどうぞ。",
   icons: {
-    icon: "/nono_logo.jpg",
-    apple: "/nono_logo.jpg",
-    shortcut: "/nono_logo.jpg",
+    icon: "/favicon.jpg",
+    apple: "/favicon.jpg",
+    shortcut: "/favicon.jpg",
   },
 };
 
