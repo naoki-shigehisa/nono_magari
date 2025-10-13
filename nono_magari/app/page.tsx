@@ -8,7 +8,7 @@ export default function Home() {
 
   return (
     <div className={`font-sans transition-colors duration-300 ${
-      mode === "night" ? "bg-[#2a2a2a] text-neutral-100" : "bg-background text-foreground"
+      mode === "night" ? "bg-[#555555] text-neutral-100" : "bg-background text-foreground"
     }`}>
       {/* Night global overlay removed: switch to dedicated night assets/colors */}
       {/* Hero */}
@@ -16,10 +16,10 @@ export default function Home() {
         mode === "night" ? "bg-[#5e5e5e]" : "bg-white"
       }`}>
         <Image
-          src={mode === "night" ? "/nono_logo_grey.jpg" : "/nono_logo.jpg"}
-          alt="Hero background"
+          src="/nono_logo.png"
+          alt="Hero logo"
           fill
-          className="object-contain"
+          className={`object-contain transition-[filter,opacity] duration-300 ${mode === "night" ? "invert brightness-110" : ""}`}
           priority
         />
         {/* Mode Switch on hero */}
