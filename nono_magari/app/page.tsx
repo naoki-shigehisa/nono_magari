@@ -82,10 +82,10 @@ export default function Home() {
           {/* Info / Access */}
           <section className="flex justify-center px-6 sm:px-10 py-16 sm:py-24">
             <div className="max-w-[1024px] text-center">
-              <h3 className="text-xl sm:text-2xl font-semibold">野々</h3>
+              <h3 className="text-xl sm:text-2xl font-semibold">朝ごはん 野々</h3>
               <ul className="mt-4 space-y-2 text-sm sm:text-base">
-                <li>OPEN 10:00 / CLOSE 13:00</li>
                 <li>NEXT OPEN 10/26 (日)</li>
+                <li>OPEN 10:00 / CLOSE 13:00</li>
                 <li>東京都杉並区宮前5-9-8 okatte にしおぎ</li>
               </ul>
             </div>
