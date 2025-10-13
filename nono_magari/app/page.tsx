@@ -102,6 +102,26 @@ export default function Home() {
         </>
       )}
 
+      {/* Instagram CTA */}
+      <section className="px-6 sm:px-10 py-12">
+        <div className="max-w-[1024px] mx-auto text-center">
+          <div className="text-sm opacity-70">Follow us on Instagram</div>
+          <a
+            href="https://instagram.com/nono_magari"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram @nono_magari"
+            className={`inline-flex items-center justify-center mt-1 text-base sm:text-lg px-3 py-2 rounded underline underline-offset-4 sm:no-underline transition-colors focus:outline-none ${
+              mode === "night"
+                ? "text-neutral-100 hover:opacity-90 focus-visible:ring-1 focus-visible:ring-neutral-100/30 active:opacity-80"
+                : "text-neutral-900 hover:opacity-80 focus-visible:ring-1 focus-visible:ring-neutral-900/20 active:opacity-90"
+            }`}
+          >
+            <span>@nono_magari</span>
+          </a>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="px-6 sm:px-10 py-10 border-t border-black/10 dark:border-white/10 text-center text-xs sm:text-sm">
         <p>Copyright © 2025 野々</p>
