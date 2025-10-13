@@ -96,7 +96,10 @@ export default function Home() {
           {/* Night - Coming soon */}
           <section className="px-6 sm:px-10 py-24 sm:py-40 flex items-center justify-center">
             <div className="text-center">
-              <h2 className="text-2xl md:text-2xl font-semibold text-neutral-100">coming soon...</h2>
+              <h3 className="text-2xl md:text-2xl font-semibold text-neutral-100">居酒屋 野々</h3>
+              <ul className="mt-4 space-y-2 text-sm sm:text-base">
+                <li>Coming soon...</li>
+              </ul>
             </div>
           </section>
         </>
