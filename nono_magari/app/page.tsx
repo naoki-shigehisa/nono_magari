@@ -12,25 +12,27 @@ export default function Home() {
     }`}>
       {/* Night global overlay removed: switch to dedicated night assets/colors */}
       {/* Hero */}
-      <section className="relative w-full min-h-[70vh] sm:min-h-[80vh] flex items-center justify-center overflow-hidden">
+      <section className={`relative w-full min-h-[70vh] sm:min-h-[80vh] flex items-center justify-center overflow-hidden ${
+        mode === "night" ? "bg-[#5e5e5e]" : "bg-white"
+      }`}>
         <Image
           src={mode === "night" ? "/nono_logo_grey.jpg" : "/nono_logo.jpg"}
           alt="Hero background"
           fill
-          className="object-cover"
+          className="object-contain"
           priority
         />
         {/* Mode Switch on hero */}
         <div className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 z-10">
-          <div className="flex items-center justify-center gap-2 sm:gap-3 bg-white/80 backdrop-blur rounded-full p-1 shadow-md">
+          <div className={`flex items-center justify-center gap-6 sm:gap-8 p-0 ${
+            mode === "night" ? "text-neutral-100" : "text-neutral-900"
+          }`}>
             <button
               type="button"
               aria-pressed={mode === "morning"}
               onClick={() => setMode("morning")}
-              className={`px-4 sm:px-5 py-1.5 sm:py-2 rounded-full border text-sm sm:text-base transition-colors ${
-                mode === "morning"
-                  ? "bg-white text-neutral-900 border-black/10 shadow"
-                  : "bg-transparent text-neutral-700 border-transparent hover:bg-white/70"
+              className={`px-0 py-0 text-sm sm:text-base transition-opacity underline-offset-4 decoration-2 decoration-current ${
+                mode === "morning" ? "underline opacity-100" : "no-underline opacity-70 hover:opacity-100"
               }`}
             >
               Morning
@@ -39,10 +41,8 @@ export default function Home() {
               type="button"
               aria-pressed={mode === "night"}
               onClick={() => setMode("night")}
-              className={`px-4 sm:px-5 py-1.5 sm:py-2 rounded-full border text-sm sm:text-base transition-colors ${
-                mode === "night"
-                  ? "bg-white text-neutral-900 border-black/10 shadow"
-                  : "bg-transparent text-neutral-700 border-transparent hover:bg-white/70"
+              className={`px-0 py-0 text-sm sm:text-base transition-opacity underline-offset-4 decoration-2 decoration-current ${
+                mode === "night" ? "underline opacity-100" : "no-underline opacity-70 hover:opacity-100"
               }`}
             >
               Night
@@ -56,7 +56,7 @@ export default function Home() {
           {/* Concept - Morning */}
           <section className="px-6 sm:px-10 py-16 sm:py-24 max-w-[1024px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div className="order-2 md:order-1">
-              <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-900">一日のはじまりに、余白とやすらぎを。</h2>
+              <h2 className="text-2xl md:text-2xl font-semibold text-neutral-900">一日のはじまりに、余白とやすらぎを。</h2>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-neutral-700">
                 旬の食材、心地よい空間、素材の味を大切に。東京の真ん中で、やさしい朝ごはんをどうぞ。
               </p>
@@ -69,7 +69,7 @@ export default function Home() {
           {/* Ingredient - Morning */}
           <section className="px-6 sm:px-10 py-16 sm:py-24 max-w-[1024px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div className="order-2 md:order-1">
-              <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-900">こだわりの素材</h2>
+              <h2 className="text-2xl md:text-2xl font-semibold text-neutral-900">こだわりの素材</h2>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-neutral-700">
                 1つ1つの素材にこだわった朝ごはんをお楽しみください。
               </p>
@@ -96,7 +96,7 @@ export default function Home() {
           {/* Night - Coming soon */}
           <section className="px-6 sm:px-10 py-24 sm:py-40 flex items-center justify-center">
             <div className="text-center">
-              <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-100">coming soon...</h2>
+              <h2 className="text-2xl md:text-2xl font-semibold text-neutral-100">coming soon...</h2>
             </div>
           </section>
         </>
