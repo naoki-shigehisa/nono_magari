@@ -111,7 +111,6 @@ export default function Home() {
           <div className="text-sm opacity-70">Follow us on Instagram</div>
           <a
             href="https://instagram.com/nono_magari"
-            target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram @nono_magari"
             className={`inline-flex items-center justify-center mt-1 text-base sm:text-lg px-3 py-2 rounded underline underline-offset-4 sm:no-underline transition-colors focus:outline-none ${
