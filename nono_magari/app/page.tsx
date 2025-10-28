@@ -84,8 +84,8 @@ export default function Home() {
             <div className="max-w-[1024px] text-center">
               <h3 className="text-xl sm:text-2xl font-semibold">朝ごはん 野々</h3>
               <ul className="mt-4 space-y-2 text-sm sm:text-base">
-                <li>NEXT OPEN 10/26 (日)</li>
-                <li>OPEN 10:00 / CLOSE 13:00</li>
+                <li>NEXT OPEN 12/7 (日)</li>
+                <li>OPEN 10:00 / CLOSE 13:00 (L.O. 12:30)</li>
                 <li>東京都杉並区宮前5-9-8 okatte にしおぎ</li>
               </ul>
             </div>
