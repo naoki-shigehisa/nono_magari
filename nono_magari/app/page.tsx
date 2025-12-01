@@ -58,7 +58,8 @@ export default function Home() {
             <div className="order-2 md:order-1">
               <h2 className="text-2xl md:text-2xl font-semibold text-neutral-900">一日のはじまりに、余白とやすらぎを。</h2>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-neutral-700">
-                旬の食材、心地よい空間、素材の味を大切に。東京の真ん中で、やさしい朝ごはんをどうぞ。
+                旬の食材、心地よい空間、素材の味を大切に。<br/>
+                東京の真ん中で、やさしい朝ごはんをどうぞ。
               </p>
             </div>
             <div className="order-1 md:order-2 aspect-[4/3] relative rounded-xl overflow-hidden bg-white shadow-sm">
@@ -69,13 +70,84 @@ export default function Home() {
           {/* Ingredient - Morning */}
           <section className="px-6 sm:px-10 py-16 sm:py-24 max-w-[1024px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div className="order-2 md:order-1">
-              <h2 className="text-2xl md:text-2xl font-semibold text-neutral-900">こだわりの素材</h2>
+              <h2 className="text-2xl md:text-2xl font-semibold text-neutral-900">こだわりの素材を大切に</h2>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-neutral-700">
-                1つ1つの素材にこだわった朝ごはんをお楽しみください。
+                手を加えすぎず、でも手を抜かない。<br/>
+                旬を迎えた野菜、旨味ののった出汁、米の香り。<br/>
+                必要以上に味を重ねず、素材が持つ輪郭をそのまま味わっていただく。<br/>
+                そんな静かな料理を、一つひとつ丁寧に仕立てています。
               </p>
             </div>
             <div className="order-1 md:order-2 aspect-[4/3] relative rounded-xl overflow-hidden bg-white shadow-sm">
-              <Image src="/nono_4.jpg" alt="nono_4" fill className="object-cover" />
+              <Image src="/nono_1.jpg" alt="nono_1" fill className="object-cover" />
+            </div>
+          </section>
+
+          {/* Past Menus */}
+          <section className="px-6 sm:px-10 py-16 sm:py-24">
+            <div className="max-w-[1024px] mx-auto">
+              <h3 className="text-xl sm:text-2xl font-semibold text-center">PAST MENUS</h3>
+              <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
+                {/* vol.1 */}
+                <article className="rounded-xl overflow-hidden bg-white shadow-sm border border-black/5">
+                  <div className="relative w-full aspect-[4/3]">
+                    <Image src="/menu_1.jpg" alt="2025/8/30 PRE-OPENING" fill className="object-cover" />
+                  </div>
+                  <div className="px-4 py-3">
+                    <div className="text-[12px] tracking-widest text-neutral-500 font-mono tabular-nums">
+                      2025/8/30
+                      <span className="ml-3 align-[0.05em] font-sans uppercase tracking-[0.25em] text-neutral-400">PRE-OPENING</span>
+                    </div>
+                    <ul className="mt-2 space-y-1 text-[13px] sm:text-sm leading-7 text-neutral-700">
+                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>ささ結</li>
+                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>那須御養卵 極</li>
+                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>本カマスの天日干し</li>
+                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>トマトとほうれん草の味噌汁</li>
+                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>ぬか漬け</li>
+                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>ナスの焼き浸し</li>
+                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>海苔の佃煮</li>
+                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>お茶 冴えあかり</li>
+                    </ul>
+                  </div>
+                </article>
+                {/* vol.2 */}
+                <article className="rounded-xl overflow-hidden bg-white shadow-sm border border-black/5">
+                  <div className="relative w-full aspect-[4/3]">
+                    <Image src="/menu_2.jpg" alt="2025/9/28" fill className="object-cover" />
+                  </div>
+                  <div className="px-4 py-3">
+                    <div className="text-[12px] tracking-widest text-neutral-500 font-mono tabular-nums">2025/9/28</div>
+                    <ul className="mt-2 space-y-1 text-[13px] sm:text-sm leading-7 text-neutral-700">
+                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>ささ結</li>
+                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>那須御養卵 極</li>
+                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>銀ジャケ</li>
+                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>かぼちゃと豚肉の豆乳みそ汁</li>
+                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>ぬか漬け</li>
+                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>ナスの焼き浸し</li>
+                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>海苔の佃煮</li>
+                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>有機ほうじ茶 八万寿</li>
+                    </ul>
+                  </div>
+                </article>
+                {/* vol.3 */}
+                <article className="rounded-xl overflow-hidden bg-white shadow-sm border border-black/5">
+                  <div className="relative w-full aspect-[4/3]">
+                    <Image src="/nono_2.jpg" alt="2025/10/26" fill className="object-cover" />
+                  </div>
+                  <div className="px-4 py-3">
+                    <div className="text-[12px] tracking-widest text-neutral-500 font-mono tabular-nums">2025/10/26</div>
+                    <ul className="mt-2 space-y-1 text-[13px] sm:text-sm leading-7 text-neutral-700">
+                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>ひとめぼれ</li>
+                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>谷町納豆</li>
+                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>トロ鯖味醂干し</li>
+                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>豚汁</li>
+                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>焼ききのこの白和え</li>
+                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>ほうれん草のお浸し</li>
+                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>煎茶 煎</li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
             </div>
           </section>
 
@@ -94,12 +166,21 @@ export default function Home() {
       ) : (
         <>
           {/* Night - Coming soon */}
-          <section className="px-6 sm:px-10 py-24 sm:py-40 flex items-center justify-center">
-            <div className="text-center">
+          <section className="px-6 sm:px-10 py-16 sm:py-24">
+            <div className="max-w-[1024px] mx-auto text-center">
               <h3 className="text-2xl md:text-2xl font-semibold text-neutral-100">居酒屋 野々</h3>
-              <ul className="mt-4 space-y-2 text-sm sm:text-base">
-                <li>Coming soon...</li>
-              </ul>
+              <div className="max-w-[1024px] mx-auto text-center">
+                <ul className="space-y-2 text-sm sm:text-base">
+                  <li>Coming soon...</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* Night - Photo */}
+          <section className="px-6 sm:px-10 py-12 sm:py-16">
+            <div className="mt-8 mx-auto max-w-[720px] aspect-[3/2] relative rounded-xl overflow-hidden bg-white/10 shadow-md">
+              <Image src="/nono_4.jpg" alt="店内の様子" fill className="object-cover" />
             </div>
           </section>
         </>
