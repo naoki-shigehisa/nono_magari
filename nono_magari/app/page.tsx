@@ -98,15 +98,15 @@ export default function Home() {
                       2025/8/30
                       <span className="ml-3 align-[0.05em] font-sans uppercase tracking-[0.25em] text-neutral-400">PRE-OPENING</span>
                     </div>
-                    <ul className="mt-2 space-y-1 text-[13px] sm:text-sm leading-7 text-neutral-700">
-                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>ささ結</li>
-                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>那須御養卵 極</li>
-                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>本カマスの天日干し</li>
-                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>トマトとほうれん草の味噌汁</li>
-                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>ぬか漬け</li>
-                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>ナスの焼き浸し</li>
-                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>海苔の佃煮</li>
-                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>お茶 冴えあかり</li>
+                    <ul className="mt-2 pt-2 border-t border-black/5 list-disc pl-5 marker:text-neutral-300 text-[14px] sm:text-base leading-7 text-neutral-700 space-y-1.5">
+                      <li>ささ結</li>
+                      <li>那須御養卵 極</li>
+                      <li>本カマスの天日干し</li>
+                      <li>トマトとほうれん草の味噌汁</li>
+                      <li>ぬか漬け</li>
+                      <li>ナスの焼き浸し</li>
+                      <li>海苔の佃煮</li>
+                      <li>お茶 冴えあかり</li>
                     </ul>
                   </div>
                 </article>
@@ -117,15 +117,15 @@ export default function Home() {
                   </div>
                   <div className="px-4 py-3">
                     <div className="text-[12px] tracking-widest text-neutral-500 font-mono tabular-nums">2025/9/28</div>
-                    <ul className="mt-2 space-y-1 text-[13px] sm:text-sm leading-7 text-neutral-700">
-                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>ささ結</li>
-                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>那須御養卵 極</li>
-                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>銀ジャケ</li>
-                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>かぼちゃと豚肉の豆乳みそ汁</li>
-                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>ぬか漬け</li>
-                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>ナスの焼き浸し</li>
-                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>海苔の佃煮</li>
-                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>有機ほうじ茶 八万寿</li>
+                    <ul className="mt-2 pt-2 border-t border-black/5 list-disc pl-5 marker:text-neutral-300 text-[14px] sm:text-base leading-7 text-neutral-700 space-y-1.5">
+                      <li>ささ結</li>
+                      <li>那須御養卵 極</li>
+                      <li>銀ジャケ</li>
+                      <li>かぼちゃと豚肉の豆乳みそ汁</li>
+                      <li>ぬか漬け</li>
+                      <li>ナスの焼き浸し</li>
+                      <li>海苔の佃煮</li>
+                      <li>有機ほうじ茶 八万寿</li>
                     </ul>
                   </div>
                 </article>
@@ -136,14 +136,14 @@ export default function Home() {
                   </div>
                   <div className="px-4 py-3">
                     <div className="text-[12px] tracking-widest text-neutral-500 font-mono tabular-nums">2025/10/26</div>
-                    <ul className="mt-2 space-y-1 text-[13px] sm:text-sm leading-7 text-neutral-700">
-                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>ひとめぼれ</li>
-                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>谷町納豆</li>
-                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>トロ鯖味醂干し</li>
-                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>豚汁</li>
-                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>焼ききのこの白和え</li>
-                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>ほうれん草のお浸し</li>
-                      <li className="flex items-start gap-2"><span aria-hidden="true" className="mt-[10px] h-1 w-1 rounded-full bg-neutral-400/60"></span>煎茶 煎</li>
+                    <ul className="mt-2 pt-2 border-t border-black/5 list-disc pl-5 marker:text-neutral-300 text-[14px] sm:text-base leading-7 text-neutral-700 space-y-1.5">
+                      <li>ひとめぼれ</li>
+                      <li>谷町納豆</li>
+                      <li>トロ鯖味醂干し</li>
+                      <li>豚汁</li>
+                      <li>焼ききのこの白和え</li>
+                      <li>ほうれん草のお浸し</li>
+                      <li>煎茶 煎</li>
                     </ul>
                   </div>
                 </article>
