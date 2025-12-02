@@ -98,7 +98,7 @@ export default function Home() {
                       2025/8/30
                       <span className="ml-3 align-[0.05em] font-sans uppercase tracking-[0.25em] text-neutral-400">PRE-OPENING</span>
                     </div>
-                    <ul className="mt-2 pt-2 border-t border-black/5 list-disc pl-5 marker:text-neutral-300 text-[14px] sm:text-base leading-7 text-neutral-700 space-y-1.5">
+                    <ul className="mt-2 pt-2 border-t border-black/5 list-none pl-0 text-[14px] sm:text-base leading-7 text-neutral-700 space-y-1.5">
                       <li>ささ結</li>
                       <li>那須御養卵 極</li>
                       <li>本カマスの天日干し</li>
@@ -117,7 +117,7 @@ export default function Home() {
                   </div>
                   <div className="px-4 py-3">
                     <div className="text-[12px] tracking-widest text-neutral-500 font-mono tabular-nums">2025/9/28</div>
-                    <ul className="mt-2 pt-2 border-t border-black/5 list-disc pl-5 marker:text-neutral-300 text-[14px] sm:text-base leading-7 text-neutral-700 space-y-1.5">
+                    <ul className="mt-2 pt-2 border-t border-black/5 list-none pl-0 text-[14px] sm:text-base leading-7 text-neutral-700 space-y-1.5">
                       <li>ささ結</li>
                       <li>那須御養卵 極</li>
                       <li>銀ジャケ</li>
@@ -136,7 +136,7 @@ export default function Home() {
                   </div>
                   <div className="px-4 py-3">
                     <div className="text-[12px] tracking-widest text-neutral-500 font-mono tabular-nums">2025/10/26</div>
-                    <ul className="mt-2 pt-2 border-t border-black/5 list-disc pl-5 marker:text-neutral-300 text-[14px] sm:text-base leading-7 text-neutral-700 space-y-1.5">
+                    <ul className="mt-2 pt-2 border-t border-black/5 list-none pl-0 text-[14px] sm:text-base leading-7 text-neutral-700 space-y-1.5">
                       <li>ひとめぼれ</li>
                       <li>谷町納豆</li>
                       <li>トロ鯖味醂干し</li>
