@@ -1,16 +1,10 @@
 import type { Metadata } from "next";
-import { Zen_Kaku_Gothic_New, Shippori_Mincho, Geist_Mono } from "next/font/google";
+import { Zen_Kaku_Gothic_New, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Zen_Kaku_Gothic_New({
   variable: "--font-geist-sans",
   weight: ["400", "500", "700"],
-  display: "swap",
-});
-
-const serif = Shippori_Mincho({
-  variable: "--font-serif",
-  weight: ["500", "700"],
   display: "swap",
 });
 
@@ -37,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body
-        className={`${geistSans.variable} ${serif.variable} ${geistMono.variable} font-sans antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
       >
         <script
           type="application/ld+json"
