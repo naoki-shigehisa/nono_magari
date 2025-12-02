@@ -86,7 +86,7 @@ export default function Home() {
           {/* Past Menus */}
           <section className="px-6 sm:px-10 py-16 sm:py-24">
             <div className="max-w-[1024px] mx-auto">
-              <h3 className="text-xl sm:text-2xl text-center">Past Menus</h3>
+              <h3 className="text-xl sm:text-2xl text-center tracking-tight">Past Menus</h3>
               <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
                 {/* vol.1 */}
                 <article className="rounded-xl overflow-hidden bg-white shadow-sm border border-black/5">

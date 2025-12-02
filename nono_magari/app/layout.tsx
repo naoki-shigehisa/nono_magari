@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Zen_Kaku_Gothic_New, Geist_Mono } from "next/font/google";
+import { Noto_Sans_JP, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Zen_Kaku_Gothic_New({
+const geistSans = Noto_Sans_JP({
   variable: "--font-geist-sans",
   weight: ["400", "500", "700"],
   display: "swap",
