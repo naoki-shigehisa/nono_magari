@@ -70,7 +70,7 @@ export default function Home() {
           {/* Ingredient - Morning */}
           <section className="px-6 sm:px-10 py-16 sm:py-24 max-w-[1024px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div className="order-2 md:order-1">
-              <h2 className="text-2xl md:text-2xl font-semibold text-neutral-900">こだわりの素材を大切に</h2>
+              <h2 className="text-2xl md:text-2xl font-semibold text-neutral-900">こだわりの素材を大切に。</h2>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-neutral-700">
                 手を加えすぎず、でも手を抜かない。<br/>
                 旬を迎えた野菜、旨味ののった出汁、米の香り。<br/>
