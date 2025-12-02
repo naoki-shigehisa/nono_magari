@@ -27,9 +27,10 @@ body {
   font-feature-settings: "palt" 1; /* proportional alternate for JP */
 }
 
-/* 見出しも本文と同じゴシックに統一（わずかに字間・太さで差をつける） */
+/* 見出しは本文と同フォント。ウェイトと行間のみで差をつける */
 h2, h3 {
   font-family: var(--font-geist-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
-  letter-spacing: 0.005em;
-  font-weight: 600;
+  letter-spacing: 0;
+  font-weight: 500;
+  line-height: 1.35;
 }

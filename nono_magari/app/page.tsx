@@ -56,7 +56,7 @@ export default function Home() {
           {/* Concept - Morning */}
           <section className="px-6 sm:px-10 py-16 sm:py-24 max-w-[1024px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div className="order-2 md:order-1">
-              <h2 className="text-2xl md:text-2xl font-semibold text-neutral-900">一日のはじまりに、余白とやすらぎを。</h2>
+              <h2 className="text-2xl md:text-2xl text-neutral-900">一日のはじまりに、余白とやすらぎを。</h2>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-neutral-700">
                 旬の食材、心地よい空間、素材の味を大切に。<br/>
                 東京の真ん中で、やさしい朝ごはんをどうぞ。
@@ -70,7 +70,7 @@ export default function Home() {
           {/* Ingredient - Morning */}
           <section className="px-6 sm:px-10 py-16 sm:py-24 max-w-[1024px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div className="order-2 md:order-1">
-              <h2 className="text-2xl md:text-2xl font-semibold text-neutral-900">こだわりの素材を大切に。</h2>
+              <h2 className="text-2xl md:text-2xl text-neutral-900">こだわりの素材を大切に。</h2>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-neutral-700">
                 手を加えすぎず、でも手を抜かない。<br/>
                 旬を迎えた野菜、旨味ののった出汁、米の香り。<br/>
@@ -86,7 +86,7 @@ export default function Home() {
           {/* Past Menus */}
           <section className="px-6 sm:px-10 py-16 sm:py-24">
             <div className="max-w-[1024px] mx-auto">
-              <h3 className="text-xl sm:text-2xl font-semibold text-center">PAST MENUS</h3>
+              <h3 className="text-xl sm:text-2xl text-center">Past Menus</h3>
               <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
                 {/* vol.1 */}
                 <article className="rounded-xl overflow-hidden bg-white shadow-sm border border-black/5">
@@ -154,7 +154,7 @@ export default function Home() {
           {/* Info / Access */}
           <section className="flex justify-center px-6 sm:px-10 py-16 sm:py-24">
             <div className="max-w-[1024px] text-center">
-              <h3 className="text-xl sm:text-2xl font-semibold">朝ごはん 野々</h3>
+              <h3 className="text-xl sm:text-2xl">朝ごはん 野々</h3>
               <ul className="mt-4 space-y-2 text-sm sm:text-base">
                 <li>NEXT OPEN 12/7 (日)</li>
                 <li>OPEN 10:00 / CLOSE 13:00 (L.O. 12:30)</li>
@@ -168,7 +168,7 @@ export default function Home() {
           {/* Night - Coming soon */}
           <section className="px-6 sm:px-10 py-16 sm:py-24">
             <div className="max-w-[1024px] mx-auto text-center">
-              <h3 className="text-2xl md:text-2xl font-semibold text-neutral-100">居酒屋 野々</h3>
+              <h3 className="text-2xl md:text-2xl text-neutral-100">居酒屋 野々</h3>
               <div className="max-w-[1024px] mx-auto text-center">
                 <ul className="space-y-2 text-sm sm:text-base">
                   <li>Coming soon...</li>
