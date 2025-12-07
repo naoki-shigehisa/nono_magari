@@ -147,6 +147,24 @@ export default function Home() {
                     </ul>
                   </div>
                 </article>
+                {/* vol.3 */}
+                <article className="rounded-xl overflow-hidden bg-white shadow-sm border border-black/5">
+                  <div className="relative w-full aspect-[4/3]">
+                    <Image src="/nono_2.jpg" alt="2025/12/7" fill className="object-cover" />
+                  </div>
+                  <div className="px-4 py-3">
+                    <div className="text-[12px] tracking-widest text-neutral-500 font-mono tabular-nums">2025/10/26</div>
+                    <ul className="mt-2 pt-2 border-t border-black/5 list-none pl-0 text-[14px] sm:text-base leading-7 text-neutral-700 space-y-1.5">
+                      <li>麦とろご飯</li>
+                      <li>黒米</li>
+                      <li>銀鮭背身西京漬け / 銀だら西京漬け</li>
+                      <li>けんちん汁</li>
+                      <li>春菊と切り干し大根の和物</li>
+                      <li>鉄観音茶</li>
+                      <li>スペシャルコーヒー</li>
+                    </ul>
+                  </div>
+                </article>
               </div>
             </div>
           </section>
@@ -156,7 +174,7 @@ export default function Home() {
             <div className="max-w-[1024px] text-center">
               <h3 className="text-xl sm:text-2xl">朝ごはん 野々</h3>
               <ul className="mt-4 space-y-2 text-sm sm:text-base">
-                <li>NEXT OPEN 12/7 (日)</li>
+                <li>NEXT OPEN 2026年3月頃（予定）</li>
                 <li>OPEN 10:00 / CLOSE 13:00 (L.O. 12:30)</li>
                 <li>東京都杉並区宮前5-9-8 okatte にしおぎ</li>
               </ul>
