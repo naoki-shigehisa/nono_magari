@@ -153,7 +153,7 @@ export default function Home() {
                     <Image src="/nono_2.jpg" alt="2025/12/7" fill className="object-cover" />
                   </div>
                   <div className="px-4 py-3">
-                    <div className="text-[12px] tracking-widest text-neutral-500 font-mono tabular-nums">2025/10/26</div>
+                    <div className="text-[12px] tracking-widest text-neutral-500 font-mono tabular-nums">2025/12/7</div>
                     <ul className="mt-2 pt-2 border-t border-black/5 list-none pl-0 text-[14px] sm:text-base leading-7 text-neutral-700 space-y-1.5">
                       <li>麦とろご飯</li>
                       <li>黒米</li>
