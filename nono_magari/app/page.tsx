@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export default function Home() {
   type Mode = "morning" | "night";
-  const [mode, setMode] = useState<Mode>("morning");
+  const [mode, setMode] = useState<Mode>("night");
 
   return (
     <div className={`font-sans transition-colors duration-300 ${
