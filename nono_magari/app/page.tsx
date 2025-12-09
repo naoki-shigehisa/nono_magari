@@ -195,7 +195,7 @@ export default function Home() {
             <div className="max-w-[1024px] text-center">
               <h3 className="text-xl sm:text-2xl">野々 酒場</h3>
               <ul className="mt-4 space-y-2 text-sm sm:text-base">
-                <li>NEXT OPEN 2026年1月30日 PRE-OPENING</li>
+                <li>PRE-OPENING 2026年1月30日</li>
                 <li>OPEN 17:00 / CLOSE 23:00 (L.O. 22:00)</li>
                 <li>東京都中野区鷺宮3-7-1 MITATE</li>
               </ul>
