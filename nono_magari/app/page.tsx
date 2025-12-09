@@ -183,22 +183,22 @@ export default function Home() {
         </>
       ) : (
         <>
-          {/* Night - Coming soon */}
-          <section className="px-6 sm:px-10 py-16 sm:py-24">
-            <div className="max-w-[1024px] mx-auto text-center">
-              <h3 className="text-2xl md:text-2xl text-neutral-100">野々 酒場</h3>
-              <div className="max-w-[1024px] mx-auto text-center">
-                <ul className="space-y-2 text-sm sm:text-base">
-                  <li>Coming soon...</li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
           {/* Night - Photo */}
           <section className="px-6 sm:px-10 py-12 sm:py-16">
             <div className="mt-8 mx-auto max-w-[720px] aspect-[3/2] relative rounded-xl overflow-hidden bg-white/10 shadow-md">
               <Image src="/nono_4.jpg" alt="店内の様子" fill className="object-cover" />
+            </div>
+          </section>
+
+          {/* Info / Access */}
+          <section className="flex justify-center px-6 sm:px-10 py-16 sm:py-24">
+            <div className="max-w-[1024px] text-center">
+              <h3 className="text-xl sm:text-2xl">野々 酒場</h3>
+              <ul className="mt-4 space-y-2 text-sm sm:text-base">
+                <li>NEXT OPEN 2026年1月30日 PRE-OPENING</li>
+                <li>OPEN 17:00 / CLOSE 23:00 (L.O. 22:00)</li>
+                <li>東京都中野区鷺宮3-7-1 MITATE</li>
+              </ul>
             </div>
           </section>
         </>
