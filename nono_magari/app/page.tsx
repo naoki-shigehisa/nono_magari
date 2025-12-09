@@ -186,7 +186,7 @@ export default function Home() {
           {/* Night - Coming soon */}
           <section className="px-6 sm:px-10 py-16 sm:py-24">
             <div className="max-w-[1024px] mx-auto text-center">
-              <h3 className="text-2xl md:text-2xl text-neutral-100">居酒屋 野々</h3>
+              <h3 className="text-2xl md:text-2xl text-neutral-100">野々 酒場</h3>
               <div className="max-w-[1024px] mx-auto text-center">
                 <ul className="space-y-2 text-sm sm:text-base">
                   <li>Coming soon...</li>
