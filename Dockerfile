@@ -1,5 +1,5 @@
 # 開発は軽さよりDX優先で公式 Node イメージ
-FROM node:22-alpine
+FROM node:24-alpine
 
 # 文字化け対策など必要なら適宜追加
 WORKDIR /app
