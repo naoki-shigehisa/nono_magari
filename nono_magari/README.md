@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# nono_magari
 
-## Getting Started
+朝ごはん屋「野々」と「野々酒場」のサイト。[Next.js](https://nextjs.org)（App Router）+ Tailwind CSS で構成された 1 ページ構成の静的サイトです。
 
-First, run the development server:
+## 開発
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev     # http://localhost:3000
+npm run lint
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+リポジトリ直下の `docker-compose.yml` で Docker 上でも起動できます（`docker compose up`）。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ディレクトリ構成
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/           ルーティングとグローバル設定（Next.js の規約に従う場所）
+  layout.tsx     フォント、メタデータ、構造化データ
+  page.tsx       トップページの入口。<Home /> を描画するだけ
+  globals.css    Tailwind の読み込みとテーマ変数
 
-## Learn More
+components/    画面を構成するコンポーネント（セクション単位）
+  Home.tsx       Morning / Night の状態を持ち、各セクションを並べる
+  Hero.tsx       ロゴと Morning / Night 切替
+  Concept.tsx    見出し + 本文 + 写真の 2 カラムセクション
+  PastMenus.tsx  過去メニュー（日付タブで 1 回分ずつ表示）
+  MenuList.tsx   小見出し付きの品目リスト
+  Info.tsx       店舗情報（次回営業日 / 営業時間 / 住所）
+  InstagramCta.tsx
+  Footer.tsx
 
-To learn more about Next.js, take a look at the following resources:
+content/       文言・データ。日々の更新はここだけで済むようにしている
+  site.ts        店名、説明文、Instagram、住所などサイト全体の情報
+  morning.ts     朝ごはん: コンセプト文、店舗情報、過去メニュー
+  night.ts       酒場: 同上
+  types.ts       上記の型定義
+  index.ts       まとめて export
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+lib/
+  theme.ts       Morning / Night で切り替わる色クラスの一覧
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 方針
 
-## Deploy on Vercel
+- **見た目（components）と中身（content）を分ける。** 営業日やメニューの更新でコンポーネントを触らないようにする。
+- **モードによる色の分岐は `lib/theme.ts` に集める。** コンポーネント内で `mode === "night" ? ... : ...` を書かず、`theme[mode].xxx` を参照する。
+- **セクションは 1 ファイル 1 コンポーネント。** 新しいセクションを足すときは `components/` に追加し、`Home.tsx` で並べる。
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## よくある更新
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 次回の営業日や営業時間を変える
+
+`content/morning.ts` または `content/night.ts` の `info.lines` を編集します。
+
+### 過去メニューを追加する
+
+`content/morning.ts` または `content/night.ts` の `pastMenus` 配列の末尾に 1 件追加します。日付順（古い順）に並べてください。タブは自動で生成され、最新の回が初期表示になります。
+
+```ts
+{
+  date: "2026/10/11",
+  label: "PRE-OPENING",             // 任意
+  image: { src: "/xxx.jpg", alt: "..." }, // 任意（public/ に置く）
+  food: [
+    { title: "冷菜", items: ["..."] },  // title は省略可
+  ],
+  sake: ["..."],                     // 酒場のみ
+}
+```
+
+### コンセプト文を変える
+
+`content/morning.ts` または `content/night.ts` の `concepts` を編集します。`lines` の 1 要素が 1 行になります。
+
+### 色を変える
+
+`lib/theme.ts` を編集します。ページ全体の背景色は `app/globals.css` の CSS 変数（Morning）と `theme.night.page`（Night）にあります。
