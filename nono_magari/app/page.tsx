@@ -114,8 +114,8 @@ export default function Home() {
             <div className="max-w-[1024px] text-center">
               <h3 className="text-xl sm:text-2xl">野々 酒場</h3>
               <ul className="mt-4 space-y-2 text-sm sm:text-base">
-                <li>NEXT 未定</li>
-                <li>Instagram にて告知予定</li>
+                <li>NEXT Instagram にて告知予定</li>
+                <li>OPEN 15:00 / CLOSE 23:00 (L.O. 22:30)</li>
                 <li>東京都中野区鷺宮3-7-1 MITATE</li>
               </ul>
             </div>
