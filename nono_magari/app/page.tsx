@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import { nightMenus, type MenuGroup } from "./nightMenus";
+import { morningMenus, nightMenus, type MenuGroup, type PastMenu } from "./pastMenus";
 
 export default function Home() {
   type Mode = "morning" | "night";
@@ -84,91 +84,7 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Past Menus */}
-          <section className="px-6 sm:px-10 py-16 sm:py-24">
-            <div className="max-w-[1024px] mx-auto">
-              <h3 className="text-xl sm:text-2xl text-center tracking-tight">Past Menus</h3>
-              <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
-                {/* vol.1 */}
-                <article className="rounded-xl overflow-hidden bg-white shadow-sm border border-black/5">
-                  <div className="relative w-full aspect-[4/3]">
-                    <Image src="/menu_1.jpg" alt="2025/8/30 PRE-OPENING" fill className="object-cover" />
-                  </div>
-                  <div className="px-4 py-3">
-                    <div className="text-[12px] tracking-widest text-neutral-500 font-mono tabular-nums">
-                      2025/8/30
-                      <span className="ml-3 align-[0.05em] font-sans uppercase tracking-[0.25em] text-neutral-400">PRE-OPENING</span>
-                    </div>
-                    <ul className="mt-2 pt-2 border-t border-black/5 list-none pl-0 text-[14px] sm:text-base leading-7 text-neutral-700 space-y-1.5">
-                      <li>ささ結</li>
-                      <li>那須御養卵 極</li>
-                      <li>本カマスの天日干し</li>
-                      <li>トマトとほうれん草の味噌汁</li>
-                      <li>ぬか漬け</li>
-                      <li>ナスの焼き浸し</li>
-                      <li>海苔の佃煮</li>
-                      <li>お茶 冴えあかり</li>
-                    </ul>
-                  </div>
-                </article>
-                {/* vol.2 */}
-                <article className="rounded-xl overflow-hidden bg-white shadow-sm border border-black/5">
-                  <div className="relative w-full aspect-[4/3]">
-                    <Image src="/menu_2.jpg" alt="2025/9/28" fill className="object-cover" />
-                  </div>
-                  <div className="px-4 py-3">
-                    <div className="text-[12px] tracking-widest text-neutral-500 font-mono tabular-nums">2025/9/28</div>
-                    <ul className="mt-2 pt-2 border-t border-black/5 list-none pl-0 text-[14px] sm:text-base leading-7 text-neutral-700 space-y-1.5">
-                      <li>ささ結</li>
-                      <li>那須御養卵 極</li>
-                      <li>銀ジャケ</li>
-                      <li>かぼちゃと豚肉の豆乳みそ汁</li>
-                      <li>ぬか漬け</li>
-                      <li>ナスの焼き浸し</li>
-                      <li>海苔の佃煮</li>
-                      <li>有機ほうじ茶 八万寿</li>
-                    </ul>
-                  </div>
-                </article>
-                {/* vol.3 */}
-                <article className="rounded-xl overflow-hidden bg-white shadow-sm border border-black/5">
-                  <div className="relative w-full aspect-[4/3]">
-                    <Image src="/nono_2.jpg" alt="2025/10/26" fill className="object-cover" />
-                  </div>
-                  <div className="px-4 py-3">
-                    <div className="text-[12px] tracking-widest text-neutral-500 font-mono tabular-nums">2025/10/26</div>
-                    <ul className="mt-2 pt-2 border-t border-black/5 list-none pl-0 text-[14px] sm:text-base leading-7 text-neutral-700 space-y-1.5">
-                      <li>ひとめぼれ</li>
-                      <li>谷町納豆</li>
-                      <li>トロ鯖味醂干し</li>
-                      <li>豚汁</li>
-                      <li>焼ききのこの白和え</li>
-                      <li>ほうれん草のお浸し</li>
-                      <li>煎茶 煎</li>
-                    </ul>
-                  </div>
-                </article>
-                {/* vol.3 */}
-                <article className="rounded-xl overflow-hidden bg-white shadow-sm border border-black/5">
-                  <div className="relative w-full aspect-[4/3]">
-                    <Image src="/nono_2.jpg" alt="2025/12/7" fill className="object-cover" />
-                  </div>
-                  <div className="px-4 py-3">
-                    <div className="text-[12px] tracking-widest text-neutral-500 font-mono tabular-nums">2025/12/7</div>
-                    <ul className="mt-2 pt-2 border-t border-black/5 list-none pl-0 text-[14px] sm:text-base leading-7 text-neutral-700 space-y-1.5">
-                      <li>麦とろご飯</li>
-                      <li>黒米</li>
-                      <li>銀鮭背身西京漬け / 銀だら西京漬け</li>
-                      <li>けんちん汁</li>
-                      <li>春菊と切り干し大根の和物</li>
-                      <li>鉄観音茶</li>
-                      <li>スペシャルコーヒー</li>
-                    </ul>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </section>
+          <PastMenus menus={morningMenus} tone="morning" />
 
           {/* Info / Access */}
           <section className="flex justify-center px-6 sm:px-10 py-16 sm:py-24">
@@ -191,33 +107,7 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Past Menus - Night */}
-          <section className="px-6 sm:px-10 py-16 sm:py-24">
-            <div className="max-w-[1024px] mx-auto">
-              <h3 className="text-xl sm:text-2xl text-center tracking-tight">Past Menus</h3>
-              <div className="mt-8 space-y-6">
-                {nightMenus.map((menu) => (
-                  <article
-                    key={menu.date}
-                    className="rounded-xl overflow-hidden bg-white/5 border border-white/10 shadow-md"
-                  >
-                    <div className="px-5 sm:px-6 py-4 border-b border-white/10 text-[12px] tracking-widest text-neutral-300 font-mono tabular-nums">
-                      {menu.date}
-                      {menu.label && (
-                        <span className="ml-3 align-[0.05em] font-sans uppercase tracking-[0.25em] text-neutral-400">
-                          {menu.label}
-                        </span>
-                      )}
-                    </div>
-                    <div className="px-5 sm:px-6 py-5 grid grid-cols-1 sm:grid-cols-2 gap-8">
-                      <NightMenuColumn heading="おしながき" groups={menu.food} />
-                      <NightMenuColumn heading="日本酒" groups={menu.sake} />
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </section>
+          <PastMenus menus={nightMenus} tone="night" />
 
           {/* Info / Access */}
           <section className="flex justify-center px-6 sm:px-10 py-16 sm:py-24">
@@ -260,30 +150,117 @@ export default function Home() {
   );
 }
 
-function NightMenuColumn({
-  heading,
+function MenuList({
   groups,
+  tone,
 }: {
-  heading: string;
   groups: MenuGroup[];
+  tone: "morning" | "night";
 }) {
+  const title = tone === "night" ? "text-neutral-400" : "text-neutral-500";
+  const item = tone === "night" ? "text-neutral-200" : "text-neutral-700";
   return (
-    <div>
-      <div className="text-[11px] uppercase tracking-[0.25em] text-neutral-300">{heading}</div>
-      <div className="mt-2 pt-2 border-t border-white/10 space-y-4">
-        {groups.map((group, i) => (
-          <div key={group.title ?? i}>
-            {group.title && (
-              <div className="text-[12px] tracking-widest text-neutral-400">{group.title}</div>
-            )}
-            <ul className="list-none pl-0 text-[14px] sm:text-base leading-7 text-neutral-200 space-y-1.5">
-              {group.items.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
+    <div className="space-y-3">
+      {groups.map((group, i) => (
+        <div key={group.title ?? i}>
+          {group.title && (
+            <div className={`text-[11px] tracking-widest ${title}`}>{group.title}</div>
+          )}
+          <ul className={`mt-0.5 list-none pl-0 text-[14px] sm:text-[15px] leading-6 space-y-1 ${item}`}>
+            {group.items.map((it) => (
+              <li key={it}>{it}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </div>
+  );
+}
+
+function PastMenus({
+  menus,
+  tone,
+}: {
+  menus: PastMenu[];
+  tone: "morning" | "night";
+}) {
+  // 最新の回を初期表示
+  const [index, setIndex] = useState(menus.length - 1);
+  const menu = menus[Math.min(index, menus.length - 1)];
+  const night = tone === "night";
+
+  const card = night
+    ? "bg-white/5 border border-white/10 shadow-md"
+    : "bg-white border border-black/5 shadow-sm";
+  const divider = night ? "border-white/10" : "border-black/5";
+  const dateText = night ? "text-neutral-300" : "text-neutral-500";
+  const labelText = night ? "text-neutral-400" : "text-neutral-400";
+  const headingText = night ? "text-neutral-300" : "text-neutral-500";
+
+  return (
+    <section className="px-6 sm:px-10 py-16 sm:py-24">
+      <div className="max-w-[1024px] mx-auto">
+        <h3 className="text-xl sm:text-2xl text-center tracking-tight">Past Menus</h3>
+
+        {/* 日付タブ: ヒーローの Morning / Night 切替と同じ下線スタイル */}
+        <div className="mt-5 flex flex-wrap justify-center gap-x-5 gap-y-2 sm:gap-x-7">
+          {menus.map((m, i) => {
+            const selected = i === index;
+            return (
+              <button
+                key={m.date}
+                type="button"
+                aria-pressed={selected}
+                onClick={() => setIndex(i)}
+                className={`px-0 py-1 text-[13px] sm:text-sm font-mono tabular-nums tracking-widest transition-opacity underline-offset-4 decoration-2 decoration-current ${
+                  selected ? "underline opacity-100" : "no-underline opacity-55 hover:opacity-100"
+                }`}
+              >
+                {m.short}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* 選択中の回 */}
+        <article key={menu.date} className={`mt-6 rounded-xl overflow-hidden ${card}`}>
+          <div className={`grid grid-cols-1 ${menu.image ? "md:grid-cols-[2fr_3fr]" : ""}`}>
+            {menu.image && (
+              <div className="relative w-full aspect-[4/3] md:aspect-auto md:min-h-full">
+                <Image src={menu.image.src} alt={menu.image.alt} fill className="object-cover" />
+              </div>
+            )}
+            <div className="px-5 sm:px-6 py-4 sm:py-5">
+              <div className={`text-[12px] tracking-widest font-mono tabular-nums ${dateText}`}>
+                {menu.date}
+                {menu.label && (
+                  <span className={`ml-3 align-[0.05em] font-sans uppercase tracking-[0.25em] ${labelText}`}>
+                    {menu.label}
+                  </span>
+                )}
+              </div>
+              <div
+                className={`mt-3 pt-3 border-t ${divider} grid grid-cols-1 gap-6 ${
+                  menu.sake ? "sm:grid-cols-2" : ""
+                }`}
+              >
+                <div>
+                  {menu.sake && (
+                    <div className={`mb-2 text-[11px] uppercase tracking-[0.25em] ${headingText}`}>おしながき</div>
+                  )}
+                  <MenuList groups={menu.food} tone={tone} />
+                </div>
+                {menu.sake && (
+                  <div>
+                    <div className={`mb-2 text-[11px] uppercase tracking-[0.25em] ${headingText}`}>日本酒</div>
+                    <MenuList groups={[{ items: menu.sake }]} tone={tone} />
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
   );
 }
