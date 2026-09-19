@@ -262,6 +262,7 @@ export const night: ModeContent = {
   pastMenus,
   info: {
     name: "野々 酒場",
+    description: ["朝ごはん屋 野々の、夜の営業。日本酒と季節の肴を。"],
     lines: [
       "NEXT Instagram にて告知予定",
       "OPEN 15:00 / CLOSE 23:00 (L.O. 22:30)",

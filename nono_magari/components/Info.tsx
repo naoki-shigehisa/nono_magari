@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { site, type ShopInfo } from "@/content";
 import { CONTENT_WIDTH, SECTION_X } from "@/lib/theme";
 
@@ -7,7 +8,17 @@ export function Info({ info }: { info: ShopInfo }) {
     <section className={`flex justify-center ${SECTION_X} py-16 sm:py-24`}>
       <div className={`${CONTENT_WIDTH} text-center`}>
         <h3 className="text-xl sm:text-2xl">{info.name}</h3>
-        <ul className="mt-4 space-y-2 text-sm sm:text-base">
+        {info.description && (
+          <p className="mt-3 text-xs sm:text-sm leading-relaxed opacity-70">
+            {info.description.map((line, i) => (
+              <Fragment key={line}>
+                {i > 0 && <br />}
+                {line}
+              </Fragment>
+            ))}
+          </p>
+        )}
+        <ul className="mt-5 space-y-2 text-sm sm:text-base">
           {info.lines.map((line) => (
             <li key={line}>{line}</li>
           ))}

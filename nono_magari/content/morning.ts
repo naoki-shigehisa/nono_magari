@@ -167,8 +167,6 @@ export const morning: ModeContent = {
       lines: [
         "旬の食材、心地よい空間、素材の味を大切に。",
         "東京の真ん中で、やさしい朝ごはんをどうぞ。",
-        "2025年、西荻窪の okatte にしおぎ からはじまりました。",
-        "いまは西武新宿線 鷺ノ宮駅・都立家政駅の近く、MITATE で不定期に間借り営業。和食の朝ごはん（モーニング）をお出ししています。",
       ],
       image: { src: "/nono_3.jpg", alt: "朝の光が差し込む、野々の木のテーブルと椅子" },
     },
@@ -186,6 +184,10 @@ export const morning: ModeContent = {
   pastMenus,
   info: {
     name: "野々",
+    description: [
+      "不定期で間借り営業をしている、和食の朝ごはん屋です。",
+      "2025年に西荻窪の okatte にしおぎ ではじまり、いまは鷺ノ宮・都立家政の MITATE にて。",
+    ],
     lines: [
       "NEXT OPEN 2026年10月11日",
       "OPEN 8:00 / CLOSE 16:00 (L.O. 15:30)",

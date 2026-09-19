@@ -31,6 +31,8 @@ export type ConceptSection = {
 /** 店舗情報（NEXT OPEN / 営業時間 / 住所 など） */
 export type ShopInfo = {
   name: string;
+  /** 店名の下に添える短い紹介文。1 要素 = 1 行。省略可 */
+  description?: string[];
   /** 1 要素 = 1 行 */
   lines: string[];
 };
