@@ -27,9 +27,9 @@ export function Hero({ mode, onChange }: Props) {
         className={`object-contain transition-[filter,opacity] duration-300 ${t.heroLogo}`}
         priority
       />
-      <div className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 z-10">
-        {/* 太陽 / 月のアイコン。選択中は塗りつぶし、非選択は線画で薄く */}
-        <div className={`flex items-center justify-center gap-4 sm:gap-6 ${t.heroSwitch}`}>
+      <div className="absolute bottom-3 sm:bottom-5 left-1/2 -translate-x-1/2 z-10">
+        {/* 太陽 / 月の小さなアイコン。選択中は塗りつぶし、非選択は線画。どちらも控えめな濃さにする */}
+        <div className={`flex items-center justify-center ${t.heroSwitch}`}>
           {MODES.map((m) => {
             const selected = m.value === mode;
             const Icon = modeIcons[m.value];
@@ -40,8 +40,8 @@ export function Hero({ mode, onChange }: Props) {
                 aria-label={m.label}
                 aria-pressed={selected}
                 onClick={() => onChange(m.value)}
-                className={`flex items-center justify-center w-11 h-11 rounded-full transition-opacity duration-200 focus:outline-none focus-visible:ring-1 focus-visible:ring-current ${
-                  selected ? "opacity-100" : "opacity-45 hover:opacity-100"
+                className={`flex items-center justify-center w-9 h-9 rounded-full transition-opacity duration-200 focus:outline-none focus-visible:ring-1 focus-visible:ring-current ${
+                  selected ? "opacity-60" : "opacity-25 hover:opacity-60"
                 }`}
               >
                 <Icon filled={selected} className="transition-[fill] duration-200" />

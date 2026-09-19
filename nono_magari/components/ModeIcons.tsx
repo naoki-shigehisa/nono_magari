@@ -7,11 +7,11 @@ type IconProps = {
 };
 
 const base = {
-  width: 22,
-  height: 22,
+  width: 16,
+  height: 16,
   viewBox: "0 0 24 24",
   stroke: "currentColor",
-  strokeWidth: 1.4,
+  strokeWidth: 1.3,
   strokeLinecap: "round",
   strokeLinejoin: "round",
   "aria-hidden": true,
