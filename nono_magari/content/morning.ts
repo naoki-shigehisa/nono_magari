@@ -5,7 +5,7 @@ const pastMenus: PastMenu[] = [
   {
     date: "2025/8/30",
     label: "PRE-OPENING",
-    image: { src: "/menu_1.jpg", alt: "2025/8/30 PRE-OPENING" },
+    image: { src: "/menu_1.jpg", alt: "2025/8/30 PRE-OPENING の朝ごはん定食" },
     food: [
       {
         title: "朝ごはん定食",
@@ -24,7 +24,7 @@ const pastMenus: PastMenu[] = [
   },
   {
     date: "2025/9/28",
-    image: { src: "/menu_2.jpg", alt: "2025/9/28" },
+    image: { src: "/menu_2.jpg", alt: "2025/9/28 の朝ごはん定食" },
     food: [
       {
         title: "朝ごはん定食",
@@ -168,7 +168,7 @@ export const morning: ModeContent = {
         "旬の食材、心地よい空間、素材の味を大切に。",
         "東京の真ん中で、やさしい朝ごはんをどうぞ。",
       ],
-      image: { src: "/nono_3.jpg", alt: "nono_3" },
+      image: { src: "/nono_3.jpg", alt: "朝の光が差し込む、野々の木のテーブルと椅子" },
     },
     {
       title: "こだわりの素材を大切に。",
@@ -178,12 +178,16 @@ export const morning: ModeContent = {
         "必要以上に味を重ねず、素材が持つ輪郭をそのまま味わっていただく。",
         "そんな静かな料理を、一つひとつ丁寧に仕立てています。",
       ],
-      image: { src: "/nono_1.jpg", alt: "nono_1" },
+      image: { src: "/nono_1.jpg", alt: "野々の朝ごはん定食。焼き鮭、卵かけご飯、味噌汁、小鉢、お茶" },
     },
   ],
   pastMenus,
   info: {
     name: "野々",
+    description: [
+      "不定期で間借り営業をしている、和食の朝ごはん屋です。",
+      "2025年に西荻窪の okatte にしおぎ ではじまり、いまは鷺ノ宮・都立家政の MITATE にて。",
+    ],
     lines: [
       "NEXT OPEN 2026年10月11日",
       "OPEN 8:00 / CLOSE 16:00 (L.O. 15:30)",

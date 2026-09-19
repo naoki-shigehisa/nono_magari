@@ -256,12 +256,13 @@ export const night: ModeContent = {
         "決まった定番はありません。",
         "今いちばん美味しいものを、今の一杯と合わせてどうぞ。",
       ],
-      image: { src: "/nono_4.jpg", alt: "店内の様子" },
+      image: { src: "/nono_4.jpg", alt: "野々酒場の木のカウンターと花、ペンダントライト" },
     },
   ],
   pastMenus,
   info: {
     name: "野々 酒場",
+    description: ["朝ごはん屋 野々の、夜の営業。日本酒と季節の肴を。"],
     lines: [
       "NEXT Instagram にて告知予定",
       "OPEN 15:00 / CLOSE 23:00 (L.O. 22:30)",

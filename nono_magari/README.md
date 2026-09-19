@@ -19,6 +19,8 @@ npm run build
 app/           ルーティングとグローバル設定（Next.js の規約に従う場所）
   layout.tsx     フォント、メタデータ、構造化データ
   page.tsx       トップページの入口。<Home /> を描画するだけ
+  sitemap.ts     /sitemap.xml（検索エンジン向け）
+  robots.ts      /robots.txt（検索エンジン向け）
   globals.css    Tailwind の読み込みとテーマ変数
 
 components/    画面を構成するコンポーネント（セクション単位）
@@ -32,7 +34,7 @@ components/    画面を構成するコンポーネント（セクション単�
   Footer.tsx
 
 content/       文言・データ。日々の更新はここだけで済むようにしている
-  site.ts        店名、説明文、Instagram、住所などサイト全体の情報
+  site.ts        店名、説明文、キーワード、Instagram、住所、アクセスなどサイト全体の情報
   morning.ts     朝ごはん: コンセプト文、店舗情報、過去メニュー
   night.ts       酒場: 同上
   types.ts       上記の型定義
