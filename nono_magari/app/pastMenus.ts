@@ -4,10 +4,8 @@ export type MenuGroup = {
 };
 
 export type PastMenu = {
-  /** 表示用の日付（例: 2026/1/30） */
+  /** 日付（例: 2026/1/30）。タブの表示に使う */
   date: string;
-  /** タブ用の短い日付（例: 1/30） */
-  short: string;
   /** PRE-OPENING などの補足ラベル */
   label?: string;
   /** 写真（あれば） */
@@ -22,7 +20,6 @@ export type PastMenu = {
 export const morningMenus: PastMenu[] = [
   {
     date: "2025/8/30",
-    short: "8/30",
     label: "PRE-OPENING",
     image: { src: "/menu_1.jpg", alt: "2025/8/30 PRE-OPENING" },
     food: [
@@ -42,7 +39,6 @@ export const morningMenus: PastMenu[] = [
   },
   {
     date: "2025/9/28",
-    short: "9/28",
     image: { src: "/menu_2.jpg", alt: "2025/9/28" },
     food: [
       {
@@ -61,7 +57,6 @@ export const morningMenus: PastMenu[] = [
   },
   {
     date: "2025/10/26",
-    short: "10/26",
     image: { src: "/nono_2.jpg", alt: "2025/10/26" },
     food: [
       {
@@ -79,7 +74,6 @@ export const morningMenus: PastMenu[] = [
   },
   {
     date: "2025/12/7",
-    short: "12/7",
     image: { src: "/nono_2.jpg", alt: "2025/12/7" },
     food: [
       {
@@ -95,13 +89,93 @@ export const morningMenus: PastMenu[] = [
       },
     ],
   },
+  {
+    date: "2026/4/11",
+    food: [
+      {
+        title: "フムスプレート",
+        items: [
+          "フムス 2種（そら豆・豆腐）",
+          "モロヘイヤと枝豆の冷製スープ",
+          "パン",
+          "付け合わせ（野菜のグリル・紫キャベツのラペ・ポーチドエッグ）",
+        ],
+      },
+    ],
+  },
+  {
+    date: "2026/7/4",
+    food: [
+      {
+        title: "銀鮭西京漬定食",
+        items: [
+          "銀鮭西京漬",
+          "小鉢 2種（茄子の煮浸し・きゅうりの漬物）",
+          "夏野菜の味噌汁",
+          "白米（ささ結）",
+        ],
+      },
+      {
+        title: "具沢山の豚汁定食",
+        items: [
+          "具沢山の豚汁",
+          "小鉢 2種（茄子の煮浸し・きゅうりの漬物）",
+          "白米（ささ結）",
+        ],
+      },
+      {
+        title: "追加メニュー",
+        items: ["濃厚卵", "とろろ", "とうもろこしの炊き込みご飯", "豚汁"],
+      },
+      {
+        title: "デザート",
+        items: ["とうもろこしと白味噌のキャロットケーキ", "ずんだチーズケーキ"],
+      },
+    ],
+  },
+  {
+    date: "2026/9/12",
+    food: [
+      {
+        title: "鯖の味醂干し定食",
+        items: [
+          "鯖の味醂干し",
+          "小鉢 2種（モロヘイヤとトマトの和物・蓮根のきんぴら）",
+          "あおさの味噌汁",
+          "白米（宮城県産ササニシキ）",
+        ],
+      },
+      {
+        title: "だし巻き卵定食",
+        items: [
+          "だし巻き卵",
+          "小鉢 2種（モロヘイヤとトマトの和物・蓮根のきんぴら）",
+          "あおさの味噌汁",
+          "白米（宮城県産ササニシキ）",
+        ],
+      },
+      {
+        title: "追加メニュー",
+        items: [
+          "冬瓜のそぼろ煮",
+          "とろろ",
+          "鶏五目の炊き込みご飯",
+          "豚汁",
+          "茄子と豆の出汁カレー小鉢",
+        ],
+      },
+      {
+        title: "デザート",
+        items: ["シフォンケーキ"],
+      },
+    ],
+  },
 ];
 
 // 野々酒場 の過去メニュー（メニュー表 PDF より転記）
 export const nightMenus: PastMenu[] = [
   {
     date: "2026/1/30",
-    short: "1/30",
     label: "PRE-OPENING",
     food: [
       {
@@ -140,7 +214,6 @@ export const nightMenus: PastMenu[] = [
   },
   {
     date: "2026/2/27",
-    short: "2/27",
     food: [
       {
         title: "冷菜",
@@ -178,7 +251,6 @@ export const nightMenus: PastMenu[] = [
   },
   {
     date: "2026/3/20",
-    short: "3/20",
     food: [
       {
         title: "焼き餃子（5ヶ）",
@@ -221,7 +293,6 @@ export const nightMenus: PastMenu[] = [
   },
   {
     date: "2026/5/2",
-    short: "5/2",
     food: [
       {
         title: "冷菜",
@@ -258,7 +329,6 @@ export const nightMenus: PastMenu[] = [
   },
   {
     date: "2026/6/5・6/6",
-    short: "6/5・6",
     label: "ANNIVERSARY",
     food: [
       {
@@ -308,7 +378,6 @@ export const nightMenus: PastMenu[] = [
   },
   {
     date: "2026/8/1",
-    short: "8/1",
     food: [
       {
         title: "冷菜",

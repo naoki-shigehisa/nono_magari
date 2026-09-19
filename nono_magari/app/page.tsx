@@ -153,14 +153,17 @@ export default function Home() {
 function MenuList({
   groups,
   tone,
+  columns = false,
 }: {
   groups: MenuGroup[];
   tone: "morning" | "night";
+  /** グループが複数あるとき、広い画面では 2 カラムに並べる */
+  columns?: boolean;
 }) {
   const title = tone === "night" ? "text-neutral-400" : "text-neutral-500";
   const item = tone === "night" ? "text-neutral-200" : "text-neutral-700";
   return (
-    <div className="space-y-3">
+    <div className={columns ? "grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3" : "space-y-3"}>
       {groups.map((group, i) => (
         <div key={group.title ?? i}>
           {group.title && (
@@ -193,9 +196,15 @@ function PastMenus({
     ? "bg-white/5 border border-white/10 shadow-md"
     : "bg-white border border-black/5 shadow-sm";
   const divider = night ? "border-white/10" : "border-black/5";
-  const dateText = night ? "text-neutral-300" : "text-neutral-500";
   const labelText = night ? "text-neutral-400" : "text-neutral-400";
   const headingText = night ? "text-neutral-300" : "text-neutral-500";
+
+  // タブは年が変わる最初の回だけ年付きで表示する（2025/8/30, 9/28, ..., 2026/4/11, 7/4）
+  const tabLabels = menus.map((m, i) => {
+    const year = m.date.slice(0, 4);
+    const prevYear = i > 0 ? menus[i - 1].date.slice(0, 4) : null;
+    return year === prevYear ? m.date.slice(5) : m.date;
+  });
 
   return (
     <section className="px-6 sm:px-10 py-16 sm:py-24">
@@ -216,7 +225,7 @@ function PastMenus({
                   selected ? "underline opacity-100" : "no-underline opacity-55 hover:opacity-100"
                 }`}
               >
-                {m.short}
+                {tabLabels[i]}
               </button>
             );
           })}
@@ -230,25 +239,22 @@ function PastMenus({
                 <Image src={menu.image.src} alt={menu.image.alt} fill className="object-cover" />
               </div>
             )}
-            <div className="px-5 sm:px-6 py-4 sm:py-5">
-              <div className={`text-[12px] tracking-widest font-mono tabular-nums ${dateText}`}>
-                {menu.date}
-                {menu.label && (
-                  <span className={`ml-3 align-[0.05em] font-sans uppercase tracking-[0.25em] ${labelText}`}>
-                    {menu.label}
-                  </span>
-                )}
-              </div>
-              <div
-                className={`mt-3 pt-3 border-t ${divider} grid grid-cols-1 gap-6 ${
-                  menu.sake ? "sm:grid-cols-2" : ""
-                }`}
-              >
+            <div className="px-5 sm:px-6 py-5">
+              {menu.label && (
+                <div className={`mb-3 pb-3 border-b ${divider} text-[11px] uppercase tracking-[0.25em] ${labelText}`}>
+                  {menu.label}
+                </div>
+              )}
+              <div className={`grid grid-cols-1 gap-6 ${menu.sake ? "sm:grid-cols-2" : ""}`}>
                 <div>
                   {menu.sake && (
                     <div className={`mb-2 text-[11px] uppercase tracking-[0.25em] ${headingText}`}>おしながき</div>
                   )}
-                  <MenuList groups={menu.food} tone={tone} />
+                  <MenuList
+                    groups={menu.food}
+                    tone={tone}
+                    columns={!menu.sake && !menu.image && menu.food.length > 1}
+                  />
                 </div>
                 {menu.sake && (
                   <div>
