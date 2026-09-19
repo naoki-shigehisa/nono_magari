@@ -5,7 +5,7 @@ const pastMenus: PastMenu[] = [
   {
     date: "2025/8/30",
     label: "PRE-OPENING",
-    image: { src: "/menu_1.jpg", alt: "2025/8/30 PRE-OPENING" },
+    image: { src: "/menu_1.jpg", alt: "2025/8/30 PRE-OPENING の朝ごはん定食" },
     food: [
       {
         title: "朝ごはん定食",
@@ -24,7 +24,7 @@ const pastMenus: PastMenu[] = [
   },
   {
     date: "2025/9/28",
-    image: { src: "/menu_2.jpg", alt: "2025/9/28" },
+    image: { src: "/menu_2.jpg", alt: "2025/9/28 の朝ごはん定食" },
     food: [
       {
         title: "朝ごはん定食",
@@ -167,8 +167,10 @@ export const morning: ModeContent = {
       lines: [
         "旬の食材、心地よい空間、素材の味を大切に。",
         "東京の真ん中で、やさしい朝ごはんをどうぞ。",
+        "2025年、西荻窪の okatte にしおぎ からはじまりました。",
+        "いまは西武新宿線 鷺ノ宮駅・都立家政駅の近く、MITATE で不定期に間借り営業。和食の朝ごはん（モーニング）をお出ししています。",
       ],
-      image: { src: "/nono_3.jpg", alt: "nono_3" },
+      image: { src: "/nono_3.jpg", alt: "朝の光が差し込む、野々の木のテーブルと椅子" },
     },
     {
       title: "こだわりの素材を大切に。",
@@ -178,7 +180,7 @@ export const morning: ModeContent = {
         "必要以上に味を重ねず、素材が持つ輪郭をそのまま味わっていただく。",
         "そんな静かな料理を、一つひとつ丁寧に仕立てています。",
       ],
-      image: { src: "/nono_1.jpg", alt: "nono_1" },
+      image: { src: "/nono_1.jpg", alt: "野々の朝ごはん定食。焼き鮭、卵かけご飯、味噌汁、小鉢、お茶" },
     },
   ],
   pastMenus,

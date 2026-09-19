@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { Mode } from "@/content";
+import { site, type Mode } from "@/content";
 import { theme } from "@/lib/theme";
 import { modeIcons } from "./ModeIcons";
 
@@ -20,9 +20,13 @@ export function Hero({ mode, onChange }: Props) {
     <section
       className={`relative w-full min-h-[70vh] sm:min-h-[80vh] flex items-center justify-center overflow-hidden ${t.hero}`}
     >
+      {/* 見た目はロゴだけにしたいので、ページの h1 はスクリーンリーダー・検索エンジン向けに視覚的に隠す */}
+      <h1 className="sr-only">
+        {site.name} | {site.tagline}
+      </h1>
       <Image
         src="/nono_logo.png"
-        alt="Hero logo"
+        alt={`${site.name} ロゴ`}
         fill
         className={`object-contain transition-[filter,opacity] duration-300 ${t.heroLogo}`}
         priority

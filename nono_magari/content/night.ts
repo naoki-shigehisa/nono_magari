@@ -256,7 +256,7 @@ export const night: ModeContent = {
         "決まった定番はありません。",
         "今いちばん美味しいものを、今の一杯と合わせてどうぞ。",
       ],
-      image: { src: "/nono_4.jpg", alt: "店内の様子" },
+      image: { src: "/nono_4.jpg", alt: "野々酒場の木のカウンターと花、ペンダントライト" },
     },
   ],
   pastMenus,
