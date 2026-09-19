@@ -105,10 +105,10 @@ export default function Home() {
             <div className="order-2 md:order-1">
               <h2 className="text-2xl md:text-2xl text-neutral-100">手に入った今がいちばんのごちそう。</h2>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-neutral-300">
-                その日に手に入ったものから、献立を考えます。<br/>
-                市場で目に留まった魚、届いたばかりの野菜、蔵から届いた一本。<br/>
+                その季節に手に入るものから、メニューを考えます。<br/>
+                市場や酒屋をのぞいて、「ああ、もう始まっているな」と感じたものたち。<br/>
                 決まった定番はありません。<br/>
-                今日いちばん美味しいものを、今日の一杯と合わせてどうぞ。
+                今いちばん美味しいものを、今の一杯と合わせてどうぞ。
               </p>
             </div>
             <div className="order-1 md:order-2 aspect-[4/3] relative rounded-xl overflow-hidden bg-white/10 shadow-md">
