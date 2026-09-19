@@ -179,7 +179,7 @@ export const morning: ModeContent = {
   ],
   pastMenus,
   info: {
-    name: "朝ごはん 野々",
+    name: "野々",
     lines: [
       "NEXT OPEN 2026年10月11日",
       "OPEN 8:00 / CLOSE 16:00 (L.O. 15:30)",
