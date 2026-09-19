@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { Mode } from "@/content";
 import { theme } from "@/lib/theme";
+import { modeIcons } from "./ModeIcons";
 
 const MODES: { value: Mode; label: string }[] = [
   { value: "morning", label: "Morning" },
@@ -27,20 +28,23 @@ export function Hero({ mode, onChange }: Props) {
         priority
       />
       <div className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 z-10">
-        <div className={`flex items-center justify-center gap-6 sm:gap-8 p-0 ${t.heroSwitch}`}>
+        {/* 太陽 / 月のアイコン。選択中は塗りつぶし、非選択は線画で薄く */}
+        <div className={`flex items-center justify-center gap-4 sm:gap-6 ${t.heroSwitch}`}>
           {MODES.map((m) => {
             const selected = m.value === mode;
+            const Icon = modeIcons[m.value];
             return (
               <button
                 key={m.value}
                 type="button"
+                aria-label={m.label}
                 aria-pressed={selected}
                 onClick={() => onChange(m.value)}
-                className={`px-0 py-0 text-sm sm:text-base transition-opacity underline-offset-4 decoration-2 decoration-current ${
-                  selected ? "underline opacity-100" : "no-underline opacity-70 hover:opacity-100"
+                className={`flex items-center justify-center w-11 h-11 rounded-full transition-opacity duration-200 focus:outline-none focus-visible:ring-1 focus-visible:ring-current ${
+                  selected ? "opacity-100" : "opacity-45 hover:opacity-100"
                 }`}
               >
-                {m.label}
+                <Icon filled={selected} className="transition-[fill] duration-200" />
               </button>
             );
           })}
