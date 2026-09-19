@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import { nightMenus, type MenuGroup } from "./nightMenus";
 
 export default function Home() {
   type Mode = "morning" | "night";
@@ -190,6 +191,34 @@ export default function Home() {
             </div>
           </section>
 
+          {/* Past Menus - Night */}
+          <section className="px-6 sm:px-10 py-16 sm:py-24">
+            <div className="max-w-[1024px] mx-auto">
+              <h3 className="text-xl sm:text-2xl text-center tracking-tight">Past Menus</h3>
+              <div className="mt-8 space-y-6">
+                {nightMenus.map((menu) => (
+                  <article
+                    key={menu.date}
+                    className="rounded-xl overflow-hidden bg-white/5 border border-white/10 shadow-md"
+                  >
+                    <div className="px-5 sm:px-6 py-4 border-b border-white/10 text-[12px] tracking-widest text-neutral-300 font-mono tabular-nums">
+                      {menu.date}
+                      {menu.label && (
+                        <span className="ml-3 align-[0.05em] font-sans uppercase tracking-[0.25em] text-neutral-400">
+                          {menu.label}
+                        </span>
+                      )}
+                    </div>
+                    <div className="px-5 sm:px-6 py-5 grid grid-cols-1 sm:grid-cols-2 gap-8">
+                      <NightMenuColumn heading="おしながき" groups={menu.food} />
+                      <NightMenuColumn heading="日本酒" groups={menu.sake} />
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+
           {/* Info / Access */}
           <section className="flex justify-center px-6 sm:px-10 py-16 sm:py-24">
             <div className="max-w-[1024px] text-center">
@@ -227,6 +256,34 @@ export default function Home() {
       <footer className="px-6 sm:px-10 py-10 border-t border-black/10 dark:border-white/10 text-center text-xs sm:text-sm">
         <p>Copyright © 2026 野々</p>
       </footer>
+    </div>
+  );
+}
+
+function NightMenuColumn({
+  heading,
+  groups,
+}: {
+  heading: string;
+  groups: MenuGroup[];
+}) {
+  return (
+    <div>
+      <div className="text-[11px] uppercase tracking-[0.25em] text-neutral-300">{heading}</div>
+      <div className="mt-2 pt-2 border-t border-white/10 space-y-4">
+        {groups.map((group, i) => (
+          <div key={group.title ?? i}>
+            {group.title && (
+              <div className="text-[12px] tracking-widest text-neutral-400">{group.title}</div>
+            )}
+            <ul className="list-none pl-0 text-[14px] sm:text-base leading-7 text-neutral-200 space-y-1.5">
+              {group.items.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
