@@ -174,9 +174,9 @@ export default function Home() {
             <div className="max-w-[1024px] text-center">
               <h3 className="text-xl sm:text-2xl">朝ごはん 野々</h3>
               <ul className="mt-4 space-y-2 text-sm sm:text-base">
-                <li>NEXT OPEN 2026年3月頃（予定）</li>
-                <li>OPEN 10:00 / CLOSE 13:00 (L.O. 12:30)</li>
-                <li>東京都杉並区宮前5-9-8 okatte にしおぎ</li>
+                <li>NEXT OPEN 2026年10月11日</li>
+                <li>OPEN 8:00 / CLOSE 16:00 (L.O. 15:30)</li>
+                <li>東京都中野区鷺宮3-7-1 MITATE</li>
               </ul>
             </div>
           </section>
@@ -195,8 +195,8 @@ export default function Home() {
             <div className="max-w-[1024px] text-center">
               <h3 className="text-xl sm:text-2xl">野々 酒場</h3>
               <ul className="mt-4 space-y-2 text-sm sm:text-base">
-                <li>PRE-OPENING 2026年1月30日</li>
-                <li>OPEN 17:00 / CLOSE 23:00 (L.O. 22:00)</li>
+                <li>NEXT 未定</li>
+                <li>Instagram にて告知予定</li>
                 <li>東京都中野区鷺宮3-7-1 MITATE</li>
               </ul>
             </div>
@@ -225,7 +225,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="px-6 sm:px-10 py-10 border-t border-black/10 dark:border-white/10 text-center text-xs sm:text-sm">
-        <p>Copyright © 2025 野々</p>
+        <p>Copyright © 2026 野々</p>
       </footer>
     </div>
   );
