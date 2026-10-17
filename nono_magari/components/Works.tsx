@@ -46,7 +46,7 @@ export function Works() {
       </section>
 
       <InstagramCta mode="morning" />
-      <Footer />
+      <Footer showWorksLink={false} />
     </div>
   );
 }

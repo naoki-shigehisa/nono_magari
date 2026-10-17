@@ -8,7 +8,6 @@ import { Hero } from "./Hero";
 import { Info } from "./Info";
 import { InstagramCta } from "./InstagramCta";
 import { PastMenus } from "./PastMenus";
-import { WorksCta } from "./WorksCta";
 
 /**
  * トップページ本体。
@@ -30,7 +29,6 @@ export function Home() {
       <PastMenus key={mode} menus={c.pastMenus} mode={mode} />
 
       <Info info={c.info} />
-      <WorksCta mode={mode} />
       <InstagramCta mode={mode} />
       <Footer />
     </div>

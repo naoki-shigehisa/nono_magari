@@ -32,9 +32,8 @@ components/    画面を構成するコンポーネント（セクション単�
   MenuList.tsx   小見出し付きの品目リスト
   Info.tsx       店舗情報（次回営業日 / 営業時間 / 住所）
   Works.tsx      実績ページ本体（Morning の配色で固定）
-  WorksCta.tsx   トップから実績ページへの導線
   InstagramCta.tsx
-  Footer.tsx
+  Footer.tsx     コピーライトと実績ページへのリンク
 
 content/       文言・データ。日々の更新はここだけで済むようにしている
   site.ts        店名、説明文、キーワード、Instagram、住所、アクセスなどサイト全体の情報
