@@ -266,7 +266,7 @@ export const night: ModeContent = {
     lines: [
       "NEXT Instagram にて告知予定",
       "OPEN 15:00 / CLOSE 23:00 (L.O. 22:30)",
-      "東京都中野区鷺宮3-7-1 MITATE",
+      "東京都杉並区西荻南3-9-8 間（あわい）",
     ],
   },
 };
