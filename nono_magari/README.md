@@ -19,6 +19,7 @@ npm run build
 app/           ルーティングとグローバル設定（Next.js の規約に従う場所）
   layout.tsx     フォント、メタデータ、構造化データ
   page.tsx       トップページの入口。<Home /> を描画するだけ
+  works/page.tsx 実績ページ（/works）の入口。<Works /> を描画するだけ
   sitemap.ts     /sitemap.xml（検索エンジン向け）
   robots.ts      /robots.txt（検索エンジン向け）
   globals.css    Tailwind の読み込みとテーマ変数
@@ -30,6 +31,8 @@ components/    画面を構成するコンポーネント（セクション単�
   PastMenus.tsx  過去メニュー（日付タブで 1 回分ずつ表示）
   MenuList.tsx   小見出し付きの品目リスト
   Info.tsx       店舗情報（次回営業日 / 営業時間 / 住所）
+  Works.tsx      実績ページ本体（Morning の配色で固定）
+  WorksCta.tsx   トップから実績ページへの導線
   InstagramCta.tsx
   Footer.tsx
 
@@ -37,6 +40,7 @@ content/       文言・データ。日々の更新はここだけで済むよ�
   site.ts        店名、説明文、キーワード、Instagram、住所、アクセスなどサイト全体の情報
   morning.ts     朝ごはん: コンセプト文、店舗情報、過去メニュー
   night.ts       酒場: 同上
+  works.ts       出店・イベントなどの実績
   types.ts       上記の型定義
   index.ts       まとめて export
 
@@ -71,6 +75,10 @@ lib/
   sake: ["..."],                     // 酒場のみ
 }
 ```
+
+### 実績を追加する
+
+`content/works.ts` の `works` 配列の先頭に 1 件追加します（新しい順）。写真は `public/works/` に置き、`images` の 1 枚目が左側に大きく、2 枚目以降がカード下部に全幅で表示されます。
 
 ### コンセプト文を変える
 

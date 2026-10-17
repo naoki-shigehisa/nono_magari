@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/content";
 
-/** 1 ページ構成なのでトップだけ。/sitemap.xml として配信される */
+/** トップと実績ページ。/sitemap.xml として配信される */
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
@@ -9,6 +9,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
+    },
+    {
+      url: `${site.url}/works`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
     },
   ];
 }

@@ -43,3 +43,24 @@ export type ModeContent = {
   pastMenus: PastMenu[];
   info: ShopInfo;
 };
+
+/** 出店・イベントなどの実績 1 件 */
+export type Work = {
+  /** 日付（例: 2026/9/23） */
+  date: string;
+  /** EVENT / CATERING などの補足ラベル */
+  label?: string;
+  title: string;
+  /** 会場 */
+  place: string;
+  /** 概要。1 要素 = 1 行 */
+  description: string[];
+  /** 関連リンク（イベント公式サイトなど） */
+  link?: { label: string; url: string };
+  /** 数字で見せる実績（例: フード 約400食） */
+  stats?: { label: string; value: string }[];
+  /** 提供したメニュー */
+  menu?: { title?: string; items: { name: string; price?: string }[] }[];
+  /** 写真。1 枚目を大きく表示する */
+  images: { src: string; alt: string; width: number; height: number }[];
+};
