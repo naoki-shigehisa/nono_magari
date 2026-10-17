@@ -23,7 +23,7 @@ export const works: Work[] = [
           { name: "具沢山！豚汁", price: "800円" },
           { name: "豚汁・白米セット", price: "1,100円" },
           { name: "とろろ丼", price: "700円" },
-          { name: "和風ガパオライス", price: "700円" },
+          { name: "和風ガパオライス", price: "1,000円" },
         ],
       },
       {
