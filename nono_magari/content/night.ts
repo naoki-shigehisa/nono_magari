@@ -264,8 +264,8 @@ export const night: ModeContent = {
     name: "野々 酒場",
     description: ["朝ごはん屋 野々の、夜の営業。日本酒と季節の肴を。"],
     lines: [
-      "NEXT Instagram にて告知予定",
-      "OPEN 15:00 / CLOSE 23:00 (L.O. 22:30)",
+      "NEXT OPEN 2026年11月20日",
+      "OPEN 18:00 / CLOSE 24:00 (L.O. 23:30)",
       "東京都杉並区西荻南3-9-8 間（あわい）",
     ],
   },
