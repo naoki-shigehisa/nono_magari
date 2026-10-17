@@ -1,7 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      {
+        source: "/instagram",
+        destination: "https://www.instagram.com/nono_magari",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
