@@ -163,7 +163,7 @@ const pastMenus: PastMenu[] = [
     image: { src: "/menu_3.jpg", alt: "2026/10/11 の季節の野菜プレート、栗ご飯と豚汁" },
     food: [
       {
-        title: "さんま天日干し定食",
+        title: "季節のお魚定食",
         items: [
           "さんま天日干し",
           "小鉢 2種（きのこの白和え・青梗菜のナムル）",
@@ -194,7 +194,7 @@ const pastMenus: PastMenu[] = [
     image: { src: "/menu_4.jpg", alt: "2026/11/7 の季節の野菜プレート" },
     food: [
       {
-        title: "目鯛の塩焼き定食",
+        title: "季節のお魚定食",
         items: [
           "目鯛の塩焼き",
           "小鉢 2種（春菊と切り干し大根の和物・ごぼうとエリンギの胡麻煮）",
