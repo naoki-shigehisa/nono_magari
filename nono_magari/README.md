@@ -108,5 +108,13 @@ Instagram 広告の誘導先。トップや `/works` とは別の見た目（明
 
   ビルド時に埋め込まれるので、設定を変えたら再デプロイが要る。
 
+- `/instagram`（Instagram へ転送する短縮 URL）は HTML を返さないので、ブラウザのタグでは数えられない。`app/instagram/route.ts` がサーバー側から GA4 に `instagram_redirect` イベントを送っている（`lib/analytics-server.ts`、Measurement Protocol）。bot とブラウザの先読みは数えない。`?utm_source=flyer` のように付けた UTM はイベントのパラメータとして送られる。
+
+  ```
+  GA_API_SECRET=（GA4 管理画面 → データストリーム → Measurement Protocol API secret で発行）
+  ```
+
+  未設定なら送らない（転送はする）。`next dev` では GA4 の検証用エンドポイントに送り、結果をコンソールに出す。
+
 - 送信の検知は、フォームの iframe の `load` 2 回目を「送信した」とみなす方法（`components/catering/ApplyForm.tsx`）。**Google フォームが 1 ページ構成であることが前提**で、フォームにセクション（改ページ）を足すと誤検知する。
 - 広告から来たセッション（`utm_medium=paid`）では、フォームの「どこでお知りになりましたか」を「Instagramの広告」にした状態で開く。フォーム側でこの選択肢の文言を変えたら、`content/catering.ts` の `embedUrlFromAd` も直す。
