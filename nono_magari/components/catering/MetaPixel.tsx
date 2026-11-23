@@ -1,12 +1,13 @@
 import Script from "next/script";
-import { GA_MEASUREMENT_ID, META_PIXEL_ID } from "@/lib/analytics";
+import { META_PIXEL_ID } from "@/lib/analytics";
 
 /**
- * Meta ピクセルと GA4 のタグ本体。/catering 以下の layout からだけ読み込む。
+ * Meta ピクセルのタグ本体。/catering 以下の layout からだけ読み込む（広告の計測用）。
  * ID が未設定のときは何も出力しない（lib/analytics.ts を参照）。
- * どちらも読み込み時にページ表示（PageView / page_view）を自動で送る。
+ * 読み込み時にページ表示（PageView）を自動で送る。
+ * GA4 はサイト全体で計測するので、components/GoogleAnalytics.tsx を app/layout.tsx から読み込んでいる。
  */
-export function AnalyticsScripts() {
+export function MetaPixel() {
   return (
     <>
       {META_PIXEL_ID && (
@@ -24,17 +25,6 @@ export function AnalyticsScripts() {
               src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
             />
           </noscript>
-        </>
-      )}
-      {GA_MEASUREMENT_ID && (
-        <>
-          <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-            strategy="afterInteractive"
-          />
-          <Script id="ga4" strategy="afterInteractive">
-            {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_MEASUREMENT_ID}');`}
-          </Script>
         </>
       )}
     </>

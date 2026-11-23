@@ -89,7 +89,7 @@ lib/
 
 ## 弁当ケータリングの LP（/catering）
 
-Instagram 広告の誘導先。トップや `/works` とは別の見た目（明朝体・茶色）で、`app/catering/layout.tsx` 以下に閉じている。
+Instagram 広告の誘導先。トップや `/works` とは別の見た目（明朝体・茶色）で、見た目と Meta ピクセルは `app/catering/layout.tsx` 以下に閉じている。
 
 | パス | 役割 |
 |---|---|
@@ -99,7 +99,7 @@ Instagram 広告の誘導先。トップや `/works` とは別の見た目（明
 
 - 文言・価格・条件・フォームの URL は `content/catering.ts`。ファーストビューの文言は広告のクリエイティブ（`../docs/catering/cr_1_2.webp`）と一字一句同じにしている。
 - 弁当の写真は `public/catering/bento.jpg`。差し替えたら `content/catering.ts` の `heroImage` の縦横も直す。
-- 計測（Meta ピクセル / GA4）は `lib/analytics.ts` にまとめている。ID は環境変数で渡し、未設定ならタグを読み込まない。`next dev` では、送るはずだったイベントがコンソールに `[analytics]` 付きで出る。
+- 計測は `lib/analytics.ts` にまとめている。GA4 はサイト全体（`app/layout.tsx` → `components/GoogleAnalytics.tsx`）、Meta ピクセルは `/catering` 以下だけ（`components/catering/MetaPixel.tsx`）。ID は環境変数で渡し、未設定ならタグを読み込まない。`next dev` では、送るはずだったイベントがコンソールに `[analytics]` 付きで出る。
 
   ```
   NEXT_PUBLIC_META_PIXEL_ID=（数字のみ）

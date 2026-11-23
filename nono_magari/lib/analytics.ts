@@ -1,8 +1,9 @@
 /**
- * 計測（Meta ピクセル / GA4）をまとめたモジュール。/catering 以下で使う。
+ * 計測（Meta ピクセル / GA4）をまとめたモジュール。イベントの送信は /catering 以下で使う。
  *
  * ページ側からは `track("contact_start", { method, position })` / `track("lead")` を呼ぶだけ。
- * タグ本体の読み込みは components/catering/AnalyticsScripts.tsx が行う。
+ * タグ本体の読み込みは、GA4 が components/GoogleAnalytics.tsx（サイト全体）、
+ * Meta ピクセルが components/catering/MetaPixel.tsx（/catering 以下だけ）。
  *
  * ID は環境変数で渡す（ビルド時に埋め込まれる）:
  *   NEXT_PUBLIC_META_PIXEL_ID       例: 123456789012345

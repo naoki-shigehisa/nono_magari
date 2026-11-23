@@ -1,10 +1,10 @@
 import { Shippori_Mincho } from "next/font/google";
-import { AnalyticsScripts } from "@/components/catering/AnalyticsScripts";
+import { MetaPixel } from "@/components/catering/MetaPixel";
 
 /**
  * /catering 以下（弁当ケータリングの LP）だけに効く設定。
- * 広告のクリエイティブに合わせた明朝体と、計測タグをここで読み込む。
- * トップや /works には影響しない。
+ * 広告のクリエイティブに合わせた明朝体と、Meta ピクセルをここで読み込む。
+ * トップや /works には影響しない（GA4 だけは app/layout.tsx でサイト全体に入れている）。
  */
 const mincho = Shippori_Mincho({
   variable: "--font-catering-mincho",
@@ -26,7 +26,7 @@ export default function CateringLayout({ children }: { children: React.ReactNode
       }}
     >
       {children}
-      <AnalyticsScripts />
+      <MetaPixel />
     </div>
   );
 }
