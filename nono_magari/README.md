@@ -86,3 +86,27 @@ lib/
 ### 色を変える
 
 `lib/theme.ts` を編集します。ページ全体の背景色は `app/globals.css` の CSS 変数（Morning）と `theme.night.page`（Night）にあります。
+
+## 弁当ケータリングの LP（/catering）
+
+Instagram 広告の誘導先。トップや `/works` とは別の見た目（明朝体・茶色）で、`app/catering/layout.tsx` 以下に閉じている。
+
+| パス | 役割 |
+|---|---|
+| `/catering` | LP 本体 |
+| `/catering/apply` | Google フォームを埋め込んだ申込みページ |
+| `/catering/thanks` | 送信完了ページ（ここで送信完了を計測する） |
+
+- 文言・価格・条件・フォームの URL は `content/catering.ts`。ファーストビューの文言は広告のクリエイティブ（`../docs/catering/cr_1_2.webp`）と一字一句同じにしている。
+- 弁当の写真は `public/catering/bento.jpg`。差し替えたら `content/catering.ts` の `heroImage` の縦横も直す。
+- 計測（Meta ピクセル / GA4）は `lib/analytics.ts` にまとめている。ID は環境変数で渡し、未設定ならタグを読み込まない。`next dev` では、送るはずだったイベントがコンソールに `[analytics]` 付きで出る。
+
+  ```
+  NEXT_PUBLIC_META_PIXEL_ID=（数字のみ）
+  NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+  ```
+
+  ビルド時に埋め込まれるので、設定を変えたら再デプロイが要る。
+
+- 送信の検知は、フォームの iframe の `load` 2 回目を「送信した」とみなす方法（`components/catering/ApplyForm.tsx`）。**Google フォームが 1 ページ構成であることが前提**で、フォームにセクション（改ページ）を足すと誤検知する。
+- 広告から来たセッション（`utm_medium=paid`）では、フォームの「どこでお知りになりましたか」を「Instagramの広告」にした状態で開く。フォーム側でこの選択肢の文言を変えたら、`content/catering.ts` の `embedUrlFromAd` も直す。
