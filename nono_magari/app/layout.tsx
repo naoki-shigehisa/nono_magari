@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { content, site } from "@/content";
 
 const geistSans = Noto_Sans_JP({
@@ -125,6 +126,7 @@ export default function RootLayout({
           }}
         />
         {children}
+        <GoogleAnalytics />
       </body>
     </html>
   );
