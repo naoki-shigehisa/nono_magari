@@ -6,12 +6,15 @@ import { site } from "./site";
  *
  * - hero の文言は Instagram 広告のクリエイティブ（CR）と一字一句同じにしている。
  *   広告を差し替えるときは、ここも同じ文言に揃える。
- * - notes / cancelPolicy は Google フォームに書かれている文面そのまま（言い換えない）。
+ * - notes / cancelPolicy は、ご注文フォーム（Google フォーム）に書かれている文面に合わせている。
  *   フォームの文面を変えたら、ここも同じに直す。
+ * - LP のボタンは「申し込み」ではなく「空き日と金額を聞く」。/catering/apply には
+ *   簡易フォーム（時期・人数・最寄り駅）を埋め込み、ご注文フォームはテキストリンクで残している。
  */
 
-const FORM_ID = "1FAIpQLSdpGhUvYPK9lQG_syAxmhcUJGOwQicOAPe0z8OWnodi0Wqj6g";
-const FORM_VIEW_URL = `https://docs.google.com/forms/d/e/${FORM_ID}/viewform`;
+/** 簡易フォーム（空き日・お見積もりの確認） */
+const INQUIRY_FORM_VIEW_URL =
+  "https://docs.google.com/forms/d/1LNb9_4O1PWdSZdjTxpfVO73J70t6Llb0YnemMUGH9aE/viewform";
 
 export const catering = {
   paths: {
@@ -30,19 +33,13 @@ export const catering = {
   dmUrl: "https://ig.me/m/nono_magari",
 
   form: {
-    title: "野々のケータリング お申し込みフォーム",
-    /** フォームを直接開くリンク（埋め込みがうまく表示されないとき用） */
-    directUrl: "https://forms.gle/xEof9eFmkyS2AaiDA",
-    /** iframe に入れる URL */
-    embedUrl: `${FORM_VIEW_URL}?embedded=true`,
-    /**
-     * 広告から来たセッション（utm_medium=paid）で使う、流入元だけを事前入力した URL。
-     * entry.519315277 は「野々のケータリングをどこでお知りになりましたか？」の項目、
-     * 値は選択肢のラベルそのまま。フォーム側で選択肢の文言を変えると効かなくなる。
-     */
-    embedUrlFromAd: `${FORM_VIEW_URL}?usp=pp_url&entry.519315277=${encodeURIComponent(
-      "Instagramの広告",
-    )}&embedded=true`,
+    title: "野々のケータリング 空き日・お見積もりの確認フォーム",
+    /** 簡易フォームを直接開くリンク（埋め込みがうまく表示されないとき用） */
+    directUrl: INQUIRY_FORM_VIEW_URL,
+    /** iframe に入れる URL（簡易フォーム） */
+    embedUrl: `${INQUIRY_FORM_VIEW_URL}?embedded=true`,
+    /** ご注文フォーム（日時・個数などが決まっている方向けの、必須項目の多いフォーム） */
+    orderUrl: "https://forms.gle/xEof9eFmkyS2AaiDA",
   },
 
   /**
@@ -77,9 +74,24 @@ export const catering = {
   },
 
   cta: {
-    form: "フォームで申し込む",
-    dm: "DMで相談する",
-    dmShort: "DMで相談",
+    form: "フォームで空き日を確認",
+    dm: "DMで聞く",
+    /**
+     * ボタン群の下に小さく添える行。1 行 = 配列 1 つ。
+     * 狭い画面では、配列の要素の境目でだけ折り返す（文の途中で切れないように）。
+     */
+    notes: [
+      ["30秒で送れます。", "この時点では注文になりません"],
+      ["DMは「12/18・15人・新宿」のように", "送るだけで大丈夫です"],
+      ["お届け2日前までキャンセル無料"],
+    ],
+  },
+
+  /** ご注文フォームへのテキストリンク（「ご注文について」の末尾と、簡易フォームの下） */
+  orderLink: {
+    before: "日時や個数がお決まりの方は、",
+    link: "ご注文フォーム",
+    after: "からそのままお申し込みいただけます。",
   },
 
   about: {
@@ -113,14 +125,22 @@ export const catering = {
           "お届け希望日の1週間前までにお申し込みください。",
         ],
       },
+      {
+        label: "お届け",
+        lines: [
+          "配送料は別途かかります（店舗ピックアップも可）。最寄り駅をお知らせいただければ、配送料込みの金額をお返事します。",
+        ],
+      },
     ],
-    /** Google フォーム「ご注意事項」そのまま */
+    /**
+     * ご注文フォーム「ご注意事項」から。
+     * 「お届け希望日の1週間前まで」は上の「お申し込み」と重なるので、ここには載せていない。
+     */
     notes: {
       title: "ご注意事項",
       items: [
         "お申し込み後、2営業日以内に内容を確認し、メールにてご連絡いたします。",
         "メールでの確定のご連絡をもって、受注完了とさせていただきます。",
-        "お届け希望日の1週間前までにご相談ください。",
         "お届け先が遠方の場合は、お断りさせていただくことがございます。",
       ],
     },
@@ -168,10 +188,19 @@ export const catering = {
   flow: {
     title: "ご注文の流れ",
     steps: [
-      { title: "フォームまたはDMでご連絡", lines: ["お届け希望日の1週間前までに。"] },
       {
-        title: "野々から確認のご連絡",
-        lines: ["2営業日以内にメールでご連絡します。", "確定のご連絡をもって受注完了です。"],
+        title: "空き日と金額を聞く",
+        lines: [
+          "フォームかDMで、ご希望の時期・人数・最寄り駅を。まだ決まっていなくて大丈夫です。",
+        ],
+      },
+      {
+        title: "野々からお返事",
+        lines: ["2営業日以内に、空き状況と配送料込みの金額をメールでお送りします。"],
+      },
+      {
+        title: "内容を決めて、ご注文確定",
+        lines: ["ご飯の種類やアレルギーはここで伺います。お届け2日前までキャンセル無料です。"],
       },
       { title: "当日、お届け", lines: [] },
     ],
@@ -188,7 +217,7 @@ export const catering = {
   },
 
   apply: {
-    title: "お申し込み",
+    title: "空き日・お見積もりの確認",
     fallbackLead: "うまく表示されないときは、",
     fallbackLink: "こちらから開けます",
   },

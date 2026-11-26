@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ApplyForm } from "@/components/catering/ApplyForm";
-import { DmCta, FormDirectLink } from "@/components/catering/Cta";
+import { DmCta, FormDirectLink, OrderFormLink } from "@/components/catering/Cta";
 import { PageTracker } from "@/components/catering/PageTracker";
 import { site } from "@/content";
 import { catering } from "@/content/catering";
@@ -16,8 +16,9 @@ export const metadata: Metadata = {
 };
 
 /**
- * 申込みページ。Google フォームを、ヘッダーを除いた画面の高さいっぱいに埋め込む。
- * フォームの高さは外から取れないので、iframe の中でスクロールさせる。
+ * 空き日・お見積もりの確認ページ。簡易フォーム（Google フォーム）を、見出しと下のリンクを除いた
+ * 画面の高さいっぱいに埋め込む。ページ自体はスクロールさせず、フォームが画面に収まらない
+ * ときだけ iframe の中でスクロールさせる（二重スクロールにしない）。
  */
 export default function Page() {
   const { apply } = catering;
@@ -26,7 +27,7 @@ export default function Page() {
       <PageTracker page="apply" />
       <div className="mx-auto flex w-full max-w-[640px] items-center justify-between gap-3 px-4 py-2">
         <div>
-          <h1 className="text-base tracking-[0.2em]">
+          <h1 className="text-[0.9375rem] tracking-[0.04em]">
             {/* タグが読み込み時にページ表示を送るので、ページ間はふつうのリンクで読み込み直す */}
             <a href={catering.paths.lp} aria-label="お弁当のページへ戻る" className="mr-2 inline-block py-2 pr-1 opacity-80">
               ←
@@ -40,11 +41,13 @@ export default function Page() {
             </FormDirectLink>
           </p>
         </div>
-        <DmCta position="apply" className="shrink-0 !min-h-11 !px-3 !text-xs">
-          {catering.cta.dmShort}
-        </DmCta>
+        <DmCta position="apply" className="shrink-0 !min-h-11 !px-3 !text-xs" />
       </div>
       <ApplyForm />
+      <OrderFormLink
+        position="apply"
+        className="mx-auto w-full max-w-[640px] px-4 pt-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] text-[0.6875rem] leading-[1.6] tracking-[0.04em]"
+      />
     </main>
   );
 }

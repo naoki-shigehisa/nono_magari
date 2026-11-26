@@ -94,7 +94,7 @@ Instagram 広告の誘導先。トップや `/works` とは別の見た目（明
 | パス | 役割 |
 |---|---|
 | `/catering` | LP 本体 |
-| `/catering/apply` | Google フォームを埋め込んだ申込みページ |
+| `/catering/apply` | 簡易フォーム（空き日・お見積もりの確認）を埋め込んだページ。ご注文フォームへはテキストリンクで案内 |
 | `/catering/thanks` | 送信完了ページ（ここで送信完了を計測する） |
 
 - 文言・価格・条件・フォームの URL は `content/catering.ts`。ファーストビューの文言は広告のクリエイティブ（`../docs/catering/cr_1_2.webp`）と一字一句同じにしている。
@@ -117,4 +117,4 @@ Instagram 広告の誘導先。トップや `/works` とは別の見た目（明
   未設定なら送らない（転送はする）。`next dev` では GA4 の検証用エンドポイントに送り、結果をコンソールに出す。
 
 - 送信の検知は、フォームの iframe の `load` 2 回目を「送信した」とみなす方法（`components/catering/ApplyForm.tsx`）。**Google フォームが 1 ページ構成であることが前提**で、フォームにセクション（改ページ）を足すと誤検知する。
-- 広告から来たセッション（`utm_medium=paid`）では、フォームの「どこでお知りになりましたか」を「Instagramの広告」にした状態で開く。フォーム側でこの選択肢の文言を変えたら、`content/catering.ts` の `embedUrlFromAd` も直す。
+- ボタンのクリックは `catering_contact_start`（GA4）/ `Contact`（Meta）で数える。`method` は `form`（簡易フォーム。`/catering/apply` を開いたときに送る）/ `instagram_dm` / `form_direct` / `order_form`（ご注文フォーム）、`position` は `hero` / `bottom` / `sticky` / `apply` / `order`。1 セッションで `method` ごとに 1 回だけ送る。
