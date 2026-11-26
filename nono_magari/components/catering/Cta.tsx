@@ -61,7 +61,7 @@ type CtaProps = {
   children?: ReactNode;
 };
 
-/** 「フォームで申し込む」。計測は /catering/apply を開いたときに行う */
+/** 「空き日と金額を聞いてみる」。計測は /catering/apply を開いたときに行う */
 export function FormCta({ position, className = "", children }: CtaProps) {
   return (
     // タグが読み込み時にページ表示を送るので、ページ間はふつうのリンクで読み込み直す
@@ -75,7 +75,7 @@ export function FormCta({ position, className = "", children }: CtaProps) {
   );
 }
 
-/** 「DMで相談する」。Instagram の DM を直接開く */
+/** 「DMで聞く」。Instagram の DM を直接開く */
 export function DmCta({ position, className = "", children }: CtaProps) {
   return (
     <a
@@ -90,7 +90,7 @@ export function DmCta({ position, className = "", children }: CtaProps) {
   );
 }
 
-/** Google フォームを直接開くリンク（埋め込みがうまく表示されないとき用） */
+/** 簡易フォームを直接開くリンク（埋め込みがうまく表示されないとき用） */
 export function FormDirectLink({ position, className = "", children }: CtaProps) {
   return (
     <a
@@ -104,12 +104,55 @@ export function FormDirectLink({ position, className = "", children }: CtaProps)
   );
 }
 
-/** フォームと DM のボタンを横に 2 つ並べる */
+/**
+ * ご注文フォーム（日時・個数が決まっている方向け）へのテキストリンク。別タブで開く。
+ * 別タブなので、イベントの送信を待たずにそのまま開かせる。
+ */
+export function OrderFormLink({ position, className = "" }: { position: CtaPosition; className?: string }) {
+  const { before, link, after } = catering.orderLink;
+  return (
+    <p className={className}>
+      {before}
+      <a
+        href={catering.form.orderUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={() => track("contact_start", { method: "order_form", position })}
+        className="inline-block py-1 underline underline-offset-4 hover:opacity-80"
+      >
+        {link}
+      </a>
+      {after}
+    </p>
+  );
+}
+
+/**
+ * フォームと DM のボタンを横に並べる。主ボタンの文言が長いので幅は文言なりにし、
+ * 入りきらない狭い画面では 2 段に折り返す。
+ */
 export function CtaPair({ position, id }: { position: CtaPosition; id?: string }) {
   return (
-    <div id={id} className="grid grid-cols-2 gap-3">
-      <FormCta position={position} />
-      <DmCta position={position} />
+    <div id={id} className="flex flex-wrap gap-3">
+      <FormCta position={position} className="flex-[1.6_1_auto]" />
+      <DmCta position={position} className="flex-[1_1_auto]" />
     </div>
+  );
+}
+
+/** ボタン群の下に小さく添える行（所要時間・DM の文例・キャンセル無料） */
+export function CtaNotes({ className = "" }: { className?: string }) {
+  return (
+    <ul className={`space-y-1 text-[0.6875rem] leading-[1.7] tracking-[0.04em] ${className}`}>
+      {catering.cta.notes.map((chunks) => (
+        <li key={chunks[0]}>
+          {chunks.map((chunk) => (
+            <span key={chunk} className="inline-block">
+              {chunk}
+            </span>
+          ))}
+        </li>
+      ))}
+    </ul>
   );
 }

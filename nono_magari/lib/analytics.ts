@@ -21,8 +21,9 @@ export const GA_MEASUREMENT_ID = /^G-[A-Z0-9]{4,20}$/.test(rawGaId) ? rawGaId : 
 
 const DEBUG = process.env.NODE_ENV !== "production";
 
-export type ContactMethod = "form" | "instagram_dm" | "form_direct";
-export type CtaPosition = "hero" | "bottom" | "sticky" | "apply";
+/** form: 簡易フォーム（/catering/apply） / form_direct: 簡易フォームを直接開く / order_form: ご注文フォーム */
+export type ContactMethod = "form" | "instagram_dm" | "form_direct" | "order_form";
+export type CtaPosition = "hero" | "bottom" | "sticky" | "apply" | "order";
 
 type EventMap = {
   /** 申込み・相談を始めた（Meta: Contact / GA4: catering_contact_start） */
@@ -113,11 +114,6 @@ export function getUtm(): Utm {
   }
 }
 
-/** 広告から来たセッションか（utm_medium=paid） */
-export function isPaidSession(): boolean {
-  return getUtm().utm_medium === "paid";
-}
-
 /* ---------- フォーム送信済みの印 / フォームボタンを押した場所 ---------- */
 
 export function markSubmitted() {
@@ -131,7 +127,7 @@ export function consumeSubmitted(): boolean {
   return true;
 }
 
-/** LP の「フォームで申し込む」を押した場所。/catering/apply を開いたときの Contact に付ける */
+/** LP のフォームのボタン（「空き日と金額を聞いてみる」）を押した場所。/catering/apply を開いたときの Contact に付ける */
 export function rememberFormPosition(position: CtaPosition) {
   writeSession(KEY.formPosition, position);
 }

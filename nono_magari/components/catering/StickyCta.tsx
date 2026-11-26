@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { catering } from "@/content/catering";
-import { DmCta, FormCta } from "./Cta";
+import { CtaPair } from "./Cta";
 
 type Props = {
   /** この id の要素（ファーストビューのボタン）が画面外にある間だけ表示する */
@@ -30,10 +29,7 @@ export function StickyCta({ watchId }: Props) {
         visible ? "translate-y-0" : "translate-y-full"
       }`}
     >
-      <div className="grid grid-cols-2 gap-3">
-        <FormCta position="sticky" />
-        <DmCta position="sticky">{catering.cta.dmShort}</DmCta>
-      </div>
+      <CtaPair position="sticky" />
     </div>
   );
 }

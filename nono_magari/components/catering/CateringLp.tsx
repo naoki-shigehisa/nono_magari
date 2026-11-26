@@ -4,7 +4,7 @@ import { site } from "@/content";
 import { catering } from "@/content/catering";
 import { Footer } from "@/components/Footer";
 import { CateringHeader } from "./CateringHeader";
-import { CtaPair } from "./Cta";
+import { CtaNotes, CtaPair, OrderFormLink } from "./Cta";
 import { StickyCta } from "./StickyCta";
 
 /** 1 カラムの幅。スマホ基準で、PC では中央に寄せる */
@@ -87,6 +87,7 @@ function Hero() {
 
         <div className="mt-5">
           <CtaPair position="hero" id={HERO_CTA_ID} />
+          <CtaNotes className="mt-3" />
         </div>
       </div>
     </section>
@@ -170,6 +171,8 @@ function Order() {
           ))}
         </div>
       </details>
+
+      <OrderFormLink position="order" className="mt-8 text-[0.8125rem] leading-[1.9] tracking-[0.04em]" />
     </section>
   );
 }
@@ -253,6 +256,7 @@ export function CateringLp() {
             </p>
             <div className="mt-8">
               <CtaPair position="bottom" />
+              <CtaNotes className="mt-3" />
             </div>
           </div>
         </section>
