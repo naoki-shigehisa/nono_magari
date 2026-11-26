@@ -127,7 +127,7 @@ export function consumeSubmitted(): boolean {
   return true;
 }
 
-/** LP のフォームのボタン（「フォームで金額を確認する」）を押した場所。/catering/apply を開いたときの Contact に付ける */
+/** LP のフォームのボタン（「フォームで空き日を確認」）を押した場所。/catering/apply を開いたときの Contact に付ける */
 export function rememberFormPosition(position: CtaPosition) {
   writeSession(KEY.formPosition, position);
 }

@@ -61,7 +61,7 @@ type CtaProps = {
   children?: ReactNode;
 };
 
-/** 「フォームで金額を確認する」。計測は /catering/apply を開いたときに行う */
+/** 「フォームで空き日を確認」。計測は /catering/apply を開いたときに行う */
 export function FormCta({ position, className = "", children }: CtaProps) {
   return (
     // タグが読み込み時にページ表示を送るので、ページ間はふつうのリンクで読み込み直す
